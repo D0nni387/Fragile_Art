@@ -70,7 +70,15 @@ As a secondary font i have chosen to use [font here] to compliment this and allo
 
 #### Colours
 
+The client has specified #323e48 as their desired choice but has said they would allow anything to go with this as long as it contrasted well with the main colour choice.
 
+With this information i have chosen to use the following colours to provide a great contrast and to help the content stand out.
+
+#D9D9D9 #C5DCDD
+
+<div style="text-align:center;height:5rem;">
+<img src="https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/media/colours.png"></img>
+</div>
 
 #### Styling
 
