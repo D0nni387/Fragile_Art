@@ -39,3 +39,69 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
     - [Acknowledgements](#acknowledgements)
 
 8. [Disclaimer](#disclaimer)
+
+# UX
+#### Visitor Goals
+
+#### User Stories
+
+### Design Choices
+
+#### Fonts
+
+#### Colours
+
+#### Styling
+
+
+### Wireframes
+
+## Features
+
+### Exisiting Features
+
+### Future Goals
+
+## Information Architecture
+
+### Data Storage
+
+Database designs here
+
+## Technology Used
+
+### Languages
+
+### Tools
+
+## Testing
+
+### Validators
+
+### UI
+
+### Functionality
+
+### Responsive Design
+
+### Issue & Resolutions
+
+### Unresolved Issues
+
+## Deployment
+
+Lots of text here about doing things!
+
+## Credits
+
+### Content
+
+### Media
+
+### Acknowledgements
+
+- [Simen Daehlin](https://github.com/Eventyret) - (mentor) for his invaluable input, advice & support
+
+## Disclaimer
+
+All images & content used for this site are for educational purposes only.
