@@ -1,4 +1,6 @@
-# logo goes here
+<div style="text-align:center;">
+<img src="https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/media/beetle_logo.png"></img>
+</div>
 
 # Fragile Art
 
