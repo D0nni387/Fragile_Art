@@ -101,7 +101,13 @@ Database designs here
 
 ### Languages
 
+HTML
+CSS
+Javascript
+Python
+
 ### Tools
+
 
 ## Testing
 
