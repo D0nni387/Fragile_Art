@@ -4,7 +4,8 @@
 
 # Fragile Art
 
-Blerb goes here, 
+Fragile Art is a website to showcase and sell the works of Jim Vickers an artist located in Sheffield.
+He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, alongside other projects for brands such as Acoda, Balance, Arkaik Clothing & many more.
 
 ## Table of Contents
 
