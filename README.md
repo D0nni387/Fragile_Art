@@ -1,4 +1,4 @@
-<div style="text-align:center;">
+<div style="text-align:center;height:10rem;">
 <img src="https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/media/beetle_logo.png"></img>
 </div>
 
