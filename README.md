@@ -110,7 +110,17 @@ With this information i have chosen to use the following colours to provide a gr
 | Contact Number   | tel             | Number          | string    |
 | Country          | country         | text            | string    |
 
+#### Products Table
 
+| Title              | Key In Database | Form Validation | Data Type |
+|--------------------|-----------------|-----------------|-----------|
+| Product Id         | _id             | No Validation   | ObjectId  |
+| Product Name       | prod_name       | Text            | string    |
+| Product Fancy Name | prod_fancy      | text            | string    |
+| Has Size           | size            | Boolean         | Boolean   |
+| Sizes Available    | sizes           | text            | string    |
+| Colour             | colour          | text            | string    |
+| Price              | price           | text            | string    |
 
 ## Technology Used
 
