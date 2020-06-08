@@ -43,6 +43,14 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 # UX
 #### Visitor Goals
 
+- Provide access to a portfolio of works for visitors to browse.
+- Give potential clients a list of previous clients and their type of business.
+- Allow customers the option to purchase items directly from the site.
+- Give the user additional places to view more current WIP items through social media.
+- Allow the visitor to be able to contact the artist easily and through a variety of methods.
+- Allow the visitor to be able to create and account, add items to their basket and checkout when they have completed shopping.
+- Allow the visitor to return to their basket if they leave and come back to the site.
+
 #### User Stories
 
 ### Design Choices
@@ -101,7 +109,7 @@ Lots of text here about doing things!
 ### Acknowledgements
 
 - [Simen Daehlin](https://github.com/Eventyret) - (mentor) for his invaluable input, advice & support
-
+- [Jim Vickers]
 ## Disclaimer
 
 All images & content used for this site are for educational purposes only.
