@@ -95,7 +95,22 @@ With this information i have chosen to use the following colours to provide a gr
 
 ### Data Storage
 
-Database designs here
+#### User Table
+| Title            | Key In Database | Form Validation | Data Type |
+|------------------|-----------------|-----------------|-----------|
+| Account id       | _id             | No Validation   | ObjectId  |
+| Username         | username        | Text            | string    |
+| Password         | password        | hashed          | string    |
+| E-mail Address   | email           | text            | string    |
+| House Number     | house           | text            | string    |
+| Street Address   | street_address1 | text            | string    |
+| Street Address 2 | street_address2 | text            | string    |
+| County/State     | county          | text            | string    |
+| Postal Code      | post_code       | text            | string    |
+| Contact Number   | tel             | Number          | string    |
+| Country          | country         | text            | string    |
+
+
 
 ## Technology Used
 
