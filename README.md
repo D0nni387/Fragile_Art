@@ -1,4 +1,4 @@
-<div style="text-align:center;height:10rem;">
+<div style="text-align:center;height:5rem;">
 <img src="https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/media/beetle_logo.png"></img>
 </div>
 
@@ -52,6 +52,13 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 - Allow the visitor to return to their basket if they leave and come back to the site.
 
 #### User Stories
+
+- As a visitor i want to be able to see their portfolio and discover items i haven't seen before.
+- As a visitor i want to be able to purchase items that i like.
+- As a visitor i want to be able to shop with confidence and pay with my card directly not through a third party site.
+- As a visitor i want to be able to contact the artist to discuss my own projects.
+- As a visitor and potential client i want to be able to see their past collection of works and clients
+- As a visitor i want to be able to find social media links so i can follow the artists latest works
 
 ### Design Choices
 
