@@ -86,19 +86,19 @@ With this information i have chosen to use the following colours to provide a gr
 ### Wireframes
 
 #### Desktop
-- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_desktop_splash.png)
-- [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_desktop_portfolio.png)
-- [Store Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_desktop_store.png)
+- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_desktop_splash.png)
+- [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_desktop_portfolio.png)
+- [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_desktop_store.png)
 
 #### Tablet
-- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_tablet_splash.png)
-- [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_tablet_portfolio.png)
-- [Store Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_tablet_store.png)
+- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_tablet_splash.png)
+- [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_tablet_portfolio.png)
+- [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_tablet_store.png)
 
 #### Mobile
-- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_mobile_splash.png)
-- [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_mobile_portfolio.png)
-- [Store Desktop](https://raw.githubusercontent.com/D0nni387/The-DND-Campfire/master/wireframes/fa_mobile_store.png)
+- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_mobile_splash.png)
+- [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_mobile_portfolio.png)
+- [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_mobile_store.png)
 
 
 ## Features
