@@ -122,6 +122,10 @@ With this information i have chosen to use the following colours to provide a gr
 | Colour             | colour          | text            | string    |
 | Price              | price           | text            | string    |
 
+#### Orders Table
+
+
+
 ## Technology Used
 
 ### Languages
@@ -158,10 +162,12 @@ Lots of text here about doing things!
 
 ### Media
 
+All images have been provided by Jim Vickers to aid in the development of this project.
+
 ### Acknowledgements
 
 - [Simen Daehlin](https://github.com/Eventyret) - (mentor) for his invaluable input, advice & support
-- [Jim Vickers]
+- Jim Vickers
 ## Disclaimer
 
 All images & content used for this site are for educational purposes only.
