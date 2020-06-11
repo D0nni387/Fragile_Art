@@ -112,6 +112,10 @@ The portfolio section provides the artist a platform to add his works to the sit
 
 If the item is also available for sale then the user can also add this to their shopping cart.
 
+#### Clients
+
+The clients section of the site allows the user and potential new clients to see an overview of previous clients and in what field they operate also pointing the user to get in touch with the artist with regards to their own potential projects
+
 
 
 ### Exisiting Features
