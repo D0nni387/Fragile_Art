@@ -106,6 +106,8 @@ With this information i have chosen to use the following colours to provide a gr
 
 ## Features
 
+### Exisiting Features
+
 #### Portfolio
 
 The portfolio section provides the artist a platform to add his works to the site and gives the user the chance to view all his current and past works in one place, each item has a description and a look at who the client for project was.
@@ -128,7 +130,7 @@ Payment is handle on the site and keeps the user in the same loop without having
 
 The contact page allows the user a variety of methods to contact the artist in relation to either new potential clients or with regards to queries related to existing orders, potential orders or stock queries.
 
-### Exisiting Features
+
 
 ### Future Goals
 
