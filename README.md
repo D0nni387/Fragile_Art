@@ -41,6 +41,7 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 8. [Disclaimer](#disclaimer)
 
 # UX
+
 #### Visitor Goals
 
 - Provide access to a portfolio of works for visitors to browse.
@@ -105,6 +106,14 @@ With this information i have chosen to use the following colours to provide a gr
 
 ## Features
 
+#### Portfolio
+
+The portfolio section provides the artist a platform to add his works to the site and gives the user the chance to view all his current and past works in one place, each item has a description and a look at who the client for project was.
+
+If the item is also available for sale then the user can also add this to their shopping cart.
+
+
+
 ### Exisiting Features
 
 ### Future Goals
@@ -161,6 +170,7 @@ With this information i have chosen to use the following colours to provide a gr
 ### Tools
 
 - [Sweet Alert](https://sweetalert2.github.io/)
+- [Stripe Payments](https://stripe.com/)
 
 ## Testing
 
