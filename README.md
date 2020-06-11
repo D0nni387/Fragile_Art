@@ -116,6 +116,14 @@ If the item is also available for sale then the user can also add this to their 
 
 The clients section of the site allows the user and potential new clients to see an overview of previous clients and in what field they operate also pointing the user to get in touch with the artist with regards to their own potential projects
 
+#### Store
+
+The store will provide the user the oppertunity to purchase any available products directly from the web page and this was previously handled through a third party site.
+
+The user is able to add multiple items to the cart and either securely checkout in their current session or the items can be held until the user returns to the site later.
+
+Payment is handle on the site and keeps the user in the same loop without having to redirect to a third party site.
+
 
 
 ### Exisiting Features
