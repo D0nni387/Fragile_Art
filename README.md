@@ -148,15 +148,19 @@ With this information i have chosen to use the following colours to provide a gr
 
 ### Languages
 
-HTML
-CSS
-Javascript
-Python
+- HTML
+- CSS
+- Javascript
+- [Python](https://www.python.org/)
 
 ### Frameworks
 
-Django
-Bootstrap
+- [Django](https://www.djangoproject.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+### Tools
+
+- [Sweet Alert](https://sweetalert2.github.io/)
 
 ## Testing
 
@@ -188,6 +192,7 @@ All images have been provided by Jim Vickers to aid in the development of this p
 
 - [Simen Daehlin](https://github.com/Eventyret) - (mentor) for his invaluable input, advice & support
 - Jim Vickers
+
 ## Disclaimer
 
 All images & content used for this site are for educational purposes only.
