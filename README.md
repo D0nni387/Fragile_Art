@@ -124,7 +124,9 @@ The user is able to add multiple items to the cart and either securely checkout 
 
 Payment is handle on the site and keeps the user in the same loop without having to redirect to a third party site.
 
+#### Contact
 
+The contact page allows the user a variety of methods to contact the artist in relation to either new potential clients or with regards to queries related to existing orders, potential orders or stock queries.
 
 ### Exisiting Features
 
