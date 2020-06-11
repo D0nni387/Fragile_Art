@@ -153,8 +153,10 @@ CSS
 Javascript
 Python
 
-### Tools
+### Frameworks
 
+Django
+Bootstrap
 
 ## Testing
 
