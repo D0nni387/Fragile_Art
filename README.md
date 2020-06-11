@@ -57,8 +57,11 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 - As a visitor i want to be able to purchase items that i like.
 - As a visitor i want to be able to shop with confidence and pay with my card directly not through a third party site.
 - As a visitor i want to be able to contact the artist to discuss my own projects.
-- As a visitor and potential client i want to be able to see their past collection of works and clients
-- As a visitor i want to be able to find social media links so i can follow the artists latest works
+- As a visitor and potential client i want to be able to see their past collection of works and clients.
+- As a visitor i want to be able to find social media links so i can follow the artists latest works.
+- As an Admin i want to be able to add products easily.
+- As an Admin i want to be able to manage orders in a simple and easy manner.
+- As an Admin i want to be able to upload to my portfolio easily.
 
 ### Design Choices
 
@@ -81,7 +84,6 @@ With this information i have chosen to use the following colours to provide a gr
 </div>
 
 #### Styling
-
 
 ### Wireframes
 
