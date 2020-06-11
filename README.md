@@ -64,9 +64,9 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 
 #### Fonts
 
-The artist has request that the site use [font here] as they feel this best suits their work and style they want to achieve.
+The artist has request that the site use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) as they feel this best suits their work and style they want to achieve.
 
-As a secondary font i have chosen to use [font here] to compliment this and allow for the extra content to stand out from the rest of the site content.
+As a secondary font i have chosen to use [Montserrat](https://fonts.google.com/specimen/Montserrat) to compliment this and allow for the extra content to stand out from the rest of the site content.
 
 #### Colours
 
