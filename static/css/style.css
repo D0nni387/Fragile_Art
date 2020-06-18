@@ -5,26 +5,34 @@ html, body {
 
 .intro-portfolio {
     min-height: 100vh;
-    background-image: url('/media/client-splash.jpg');
-    opacity: 0.6;    
+    background-image: url('/media/portfolio-splash.png');
+    background-size: cover;
+    border-style: solid;
+    opacity: 0.5;    
 }
 
 .intro-shop {
     min-height: 100vh;
-    background-image: url('/media/client-splash.jpg');
-    opacity: 0.6; 
+    background-image: url('/media/shop-splash.png');
+    background-size: cover;
+    border-style: solid;
+    opacity: 0.5; 
 }
 
 .intro-clients {
     min-height: 100vh;
     background-image: url('/media/client-splash.jpg');
-    opacity: 0.6;   
+    background-size: cover;
+    border-style: solid;
+    opacity: 0.5;   
 }
 
 .intro-contact {
     min-height: 100vh;
-    background-image: url('/media/client-splash.jpg');
-    opacity: 0.6;   
+    background-image: url('/media/contact-splash.png');
+    background-size: cover;
+    border-style: solid;
+    opacity: 0.5;   
 }
 
 .intro-portfolio:hover,
