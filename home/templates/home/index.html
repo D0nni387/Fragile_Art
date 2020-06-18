@@ -5,24 +5,41 @@
 {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'home/js/script.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 
 <div class="container-fluid">
     <div class="row">
+
         <div class="col-3 intro-portfolio bright">
-            <div class="title"><p>Portfolio</p></div>
+            <a href="{% url 'portfolio' %}">
+                <div class="title">
+                    <p class="banner">Portfolio</p>
+                </div>
+            </a>
         </div>
+
+        </a>
         <div class="col-3 intro-shop bright">
-            <div class="title"><p>Store</p></div>
+            <div class="title">
+                <p class="banner">Store</p>
+            </div>
         </div>
         <div class="col-3 intro-clients bright">
-            <div class="title"><p>Clients</p></div>
+            <div class="title">
+                <p class="banner">Clients</p>
+            </div>
         </div>
         <div class="col-3 intro-contact bright">
-            <div class="title"><p>Get In Touch</p></div>
+            <div class="title">
+                <p class="banner">Get In Touch</p>
+            </div>
         </div>
     </div>
 </div>
