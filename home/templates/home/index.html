@@ -27,19 +27,26 @@
 
         </a>
         <div class="col-3 intro-shop bright">
-            <div class="title">
-                <p class="banner">Store</p>
-            </div>
+            <a href="{% url 'store' %}">
+                <div class="title">
+                    <p class="banner">Store</p>
+                </div>
+            </a>
         </div>
         <div class="col-3 intro-clients bright">
-            <div class="title">
-                <p class="banner">Clients</p>
-            </div>
+            <a href="{% url 'clients' %}">
+                <div class="title">
+                    <p class="banner">Clients</p>
+                </div>
+            </a>
+
         </div>
         <div class="col-3 intro-contact bright">
-            <div class="title">
-                <p class="banner">Get In Touch</p>
-            </div>
+            <a href="{% url 'contact' %}">
+                <div class="title">
+                    <p class="banner">Get In Touch</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
