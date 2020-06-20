@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     background-color: #fff;
 }
@@ -17,4 +18,26 @@ a:link {
 
 .navbar-light .navbar-nav .nav-link {
     color: #D9D9D9;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(255, 255, 255, .6);
+    padding: 2rem;
+}
+
+.portfolio-card:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio {
+    padding: 1rem;
 }
