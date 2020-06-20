@@ -93,3 +93,8 @@ html, body {
 .hide {
     display: none;
 }
+
+a:link {
+    text-decoration: none;
+    cursor: crosshair;
+}
