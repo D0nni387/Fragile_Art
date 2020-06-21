@@ -36,10 +36,8 @@ SECRET_KEY = os.getenv("SECRET_KEY","")
 DEBUG = os.getenv("DEBUG", "")
 
 
-if DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1']
-else:
-    ALLOWED_HOSTS = ['fragile-art.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'fragile-art.herokuapp.com']
+
 
 # Application definition
 
