@@ -89,20 +89,22 @@ With this information i have chosen to use the following colours to provide a gr
 ### Wireframes
 
 #### Desktop
+
 - [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_desktop_Splash.png)
 - [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_desktop_portfolio.png)
 - [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_desktop_store.png)
 
 #### Tablet
+
 - [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_tablet_splash.png)
 - [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_tablet_portfolio.png)
 - [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_tablet_store.png)
 
 #### Mobile
+
 - [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_mobile_splash.png)
 - [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_mobile_portfolio.png)
 - [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa_mobile_store.png)
-
 
 ## Features
 
@@ -130,8 +132,6 @@ Payment is handle on the site and keeps the user in the same loop without having
 
 The contact page allows the user a variety of methods to contact the artist in relation to either new potential clients or with regards to queries related to existing orders, potential orders or stock queries.
 
-
-
 ### Future Goals
 
 ## Information Architecture
@@ -139,9 +139,10 @@ The contact page allows the user a variety of methods to contact the artist in r
 ### Data Storage
 
 #### User Table
+
 | Title            | Key In Database | Form Validation | Data Type |
 |------------------|-----------------|-----------------|-----------|
-| Account id       | _id             | No Validation   | ObjectId  |
+| Account id       | _id             | No Validation   | Primary Key  |
 | Username         | username        | Text            | string    |
 | Password         | password        | hashed          | string    |
 | E-mail Address   | email           | text            | string    |
@@ -157,7 +158,7 @@ The contact page allows the user a variety of methods to contact the artist in r
 
 | Title              | Key In Database | Form Validation | Data Type |
 |--------------------|-----------------|-----------------|-----------|
-| Product Id         | _id             | No Validation   | ObjectId  |
+| Product Id         | _id             | No Validation   | Primary Key  |
 | Product Name       | prod_name       | Text            | string    |
 | Product Fancy Name | prod_fancy      | text            | string    |
 | Has Size           | size            | Boolean         | Boolean   |
