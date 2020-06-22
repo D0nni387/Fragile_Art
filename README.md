@@ -168,7 +168,18 @@ The contact page allows the user a variety of methods to contact the artist in r
 
 #### Orders Table
 
-
+|     Title    | Key In Database |    Form Validation    |  Data Type  |
+|:------------:|:---------------:|:---------------------:|:-----------:|
+| Order Id     | _id             | No Validation         | Primary Key |
+| Username     | username        | text                  | Foreign Key |
+| Address 1    | address_line_1  | string max length 100 | CharField   |
+| Address 2    | address_line_2  | string max length 100 | CharField   |
+| Town/City    | town_or_city    | string max length 100 | CharField   |
+| County/State | county_or_state | string max length 100 | CharField   |
+| Postcode     | postcode        | string max length 8   | CharField   |
+| Country      | country         | pycountry select      | Option      |
+| Order Date   | order_date      | datetime.date.today   | DateField   |
+| Paid         | paid            | False default Stripe  | Boolean     |
 
 ## Technology Used
 
