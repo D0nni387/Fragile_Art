@@ -143,28 +143,28 @@ The contact page allows the user a variety of methods to contact the artist in r
 | Title            | Key In Database | Form Validation | Data Type |
 |------------------|-----------------|-----------------|-----------|
 | Account id       | _id             | No Validation   | Primary Key  |
-| Username         | username        | Text            | string    |
-| Password         | password        | hashed          | string    |
-| E-mail Address   | email           | text            | string    |
-| House Number     | house           | text            | string    |
-| Street Address   | street_address1 | text            | string    |
-| Street Address 2 | street_address2 | text            | string    |
-| County/State     | county          | text            | string    |
-| Postal Code      | post_code       | text            | string    |
-| Contact Number   | tel             | Number          | string    |
-| Country          | country         | text            | string    |
+| Username         | username        | string max length 20 | CharField |
+| Password         | password        | hashed min length 8 | CharField |
+| E-mail Address   | email           | Must contain @ & .com etc | Email |
+| House Number     | house           | Max Digits 6 | NumField |
+| Street Address   | street_address1 | string max length 100 | string    |
+| Street Address 2 | street_address2 | string max length 100 | string    |
+| County/State     | county          | string max length 100 | string    |
+| Postal Code      | post_code       | string max length 8 | string    |
+| Contact Number   | tel             | Number max length 15 | string    |
+| Country          | country         | pycountry select  | Option    |
 
 #### Products Table
 
 | Title              | Key In Database | Form Validation | Data Type |
 |--------------------|-----------------|-----------------|-----------|
 | Product Id         | _id             | No Validation   | Primary Key  |
-| Product Name       | prod_name       | Text            | string    |
-| Product Fancy Name | prod_fancy      | text            | string    |
-| Has Size           | size            | Boolean         | Boolean   |
-| Sizes Available    | sizes           | text            | string    |
-| Colour             | colour          | text            | string    |
-| Price              | price           | text            | string    |
+| Product Name       | prod_name       | string max length 100 | CharField |
+| Product Fancy Name | prod_fancy      | string max length 100 | CharField |
+| Has Size           | size            | False Default   | Boolean |
+| Sizes Available    | sizes           | string max length 4 | CharField |
+| Colour             | colour          | string max length 20 | string |
+| Price              | price           | Max Digits 6 Decimal Places 2 | Decimal Field |
 
 #### Orders Table
 
