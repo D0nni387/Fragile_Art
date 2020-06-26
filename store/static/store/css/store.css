@@ -6,3 +6,11 @@
 .list-group-flush>.list-group-item{
     border-width: 0;
 }
+
+.card-body {
+    padding: 0.5rem;
+}
+
+.store-format {
+    text-align: center;
+}
