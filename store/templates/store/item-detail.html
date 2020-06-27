@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+{% include 'includes/nav.html' %}
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'store/css/store.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-sm-4 col-md-3">
+            <h1>{{ product.name }}</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
