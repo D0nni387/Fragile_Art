@@ -5,6 +5,10 @@
 {% include 'includes/nav.html' %}
 {% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'store/css/store.css' %}" type="text/css">
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="row align-items-center">
@@ -13,7 +17,16 @@
         </div>
     </div>
 </div>
-
-{% include 'store/store-item.html' %}
-
-{% endblock %}
+<div class="container-fluid">
+    <div class="row">
+        {% for product in products %}
+        {% if product.is_sold == True %}
+        <div class="col-sm-4 col-md-3">
+            {% include 'store/store-item.html' %}
+        </div>
+        {% else %}
+        
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endblock %}
