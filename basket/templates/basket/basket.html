@@ -19,11 +19,31 @@
     <div class="row">
         <div class="col-12">
             {% if basket_items %}
-                <div class="basket-table">
-
-                </div>
+            <div class="basket-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Item Cost</th>
+                            <th scope="col">Line Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in basket_items %}
+                        <tr>
+                          <td><img src="/media/{{ item.product.image }}" alt="{{ item.product.name}}"></td>
+                          <td>{{ item.product.name }}</td>
+                          <td>{{ item.quantity }}</td>
+                          <td>{{ item.product.price }}</td>
+                          <td></td>
+                        </tr>
+                        {% endfor %}
+                </table>
+            </div>
             {% else %}
-                <h3>You're basket is empty</h3>
+            <h3>You're basket is empty</h3>
             {% endif %}
         </div>
     </div>
