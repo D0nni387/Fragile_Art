@@ -10,5 +10,22 @@
 {% endblock %}
 
 {% block content %}
-<h1> test </h1>
-    {% endblock %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h1>Shopping Basket</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            {% if basket_items %}
+                <div class="basket-table">
+
+                </div>
+            {% else %}
+                <h3>You're basket is empty</h3>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
