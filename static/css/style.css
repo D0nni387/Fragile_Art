@@ -16,6 +16,7 @@ a:link {
 
 .nav-layout {
     justify-content: center;
+    padding-left: 10rem;;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -48,3 +49,8 @@ a:link {
     height: 4rem
 }
 
+.basket-icon {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    color: #fff;
+}
