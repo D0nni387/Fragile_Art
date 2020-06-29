@@ -6,11 +6,8 @@
         <h5 class="card-title store-format">{{ product.name }}</h5>
     </div>
     <ul class="list-group list-group-flush">
+        <li class="list-group-item store-format">{{ product.sale_type|capfirst }}</li>
         <li class="list-group-item store-format"><strong>£{{ product.price }}</strong></li>
-
-        <li class="list-group-item store-format">Quantity</li>
     </ul>
-    <div class="card-body store-format">
-        <a href="#" class="card-link ">Add to basket</a>
-    </div>
+    
 </div>
