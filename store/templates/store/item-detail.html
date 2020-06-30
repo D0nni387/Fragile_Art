@@ -15,7 +15,7 @@
         <div class="col-sm-4 col-md-6">
             <img class="img-fluid" src="/media/{{ product.image }}" alt="">
         </div>
-        <div class="col-sm-4 col-md-6">
+        <div class="col-sm-8 col-md-6">
             <h1>{{ product.name }}</h1>
             <p>{{ product.description }}</p>
             <form action="{% url 'add_to_basket' product.id %}" method="POST">
@@ -33,19 +33,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <span>
+                        <input type="submit" class="btn" value="Add to Bag"><i class="fa fa-cart-plus" aria-hidden="true"></i></span>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            
+                    </div>
                 </div>
-                <a href="{% url 'store' %}" class="btn rounded-0">
-                    <span class="icon">
-                        <i class="fa fa-arrow-left"></i>
-                    </span>
-                    <span>Back to the store</span>
-                </a>
-                
-                <span><input type="submit" class="btn" value="Add to Bag"></span>
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <span class="icon">
-                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                </span>
+                <div class="col-12">
+                    <a href="{% url 'store' %}" class="btn rounded-0">
+                        <span class="icon">
+                            <i class="fa fa-arrow-left"></i>
+                        </span>
+                        <span>Back to the store</span>
+                    </a>
+
+                </div>
             </form>
         </div>
     </div>
