@@ -37,4 +37,4 @@ def update_basket(request, item_id):
         basket.pop[item_id]
 
     request.session['basket'] = basket
-    return redirect(redirect_url)
+    return redirect(reverse('basket'))
