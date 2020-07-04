@@ -34,7 +34,7 @@ def update_basket(request, item_id):
     if quantity > 0:
         basket[item_id] = quantity
     else:
-        basket.pop[item_id]
+        basket.pop(item_id)
 
     request.session['basket'] = basket
     return redirect(reverse('basket'))
