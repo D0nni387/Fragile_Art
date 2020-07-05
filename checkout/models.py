@@ -48,6 +48,9 @@ class Order(models.Model):
         self.delivery_charge = self.order_total * settings.DELIVERY_PERCENTAGE / 100
         self.grand_total = self.total_order + self.delivery_charge
         self.save()
+
+    def __str__(self):
+        return self.order_number
         
 
 class OrderLineItem(models.Model):
@@ -55,3 +58,13 @@ class OrderLineItem(models.Model):
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     line_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+
+    def save(self, *args, **kwargs):
+        """
+        To Override the save method to set the line_total and update order total 
+        """
+        self.line_total = self.product.price * self.quantity
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'Name:{self.product.name} on order {self.order.order_number}'
