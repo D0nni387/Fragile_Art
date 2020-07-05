@@ -8,8 +8,6 @@ class OrderForm(forms.ModelForm):
                 'street_address1', 'street_address2', 'city_town', 'county_state', 
                 'postcode_zip', 'country',)
 
-
-    def 
     def __init__(self, *args, **kwargs):
         """
         Placeholders and class to remove auto gen labels and to autofocus on first field
