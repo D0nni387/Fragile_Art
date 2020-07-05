@@ -32,7 +32,22 @@ class Order(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
+    def save(self, *args, **kwargs):
+        """
+        If the order number has not been set, override the original save method to set the order number
+        """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
     
+    def total_update(self):
+        """
+        Updates the grand total as a new line is added and accounts for delivery cost to suit
+        """
+        self.total_order = self.lineitems.aggregate(Sum('line_total'))['line_total__sum']
+        self.delivery_charge = self.order_total * settings.DELIVERY_PERCENTAGE / 100
+        self.grand_total = self.total_order + self.delivery_charge
+        self.save()
         
 
 class OrderLineItem(models.Model):
