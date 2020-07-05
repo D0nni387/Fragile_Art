@@ -12,7 +12,7 @@ def checkout(request):
         messages.error(request, "Errrr there is nothing in here at all!")
         return render(reverse('shop'))
 
-    order_form = orderForm()
+    order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
