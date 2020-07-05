@@ -26,6 +26,12 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
 
+    def _order_number_generation(self):
+        """
+        Generates a random order number ( Private method )
+        """
+        return uuid.uuid4().hex.upper()
+
     
         
 
