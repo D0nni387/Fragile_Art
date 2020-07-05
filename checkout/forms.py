@@ -3,7 +3,7 @@ from .models import Order
 
 class OrderForm(forms.ModelForm):
     class Meta:
-        model = order 
+        model = Order 
         fields = ('first_name', 'last_name', 'email', 'telephone_number', 
                 'street_address1', 'street_address2', 'city_town', 'county_state', 
                 'postcode_zip', 'country',)
