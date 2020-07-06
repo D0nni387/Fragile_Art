@@ -4,7 +4,7 @@ from django.conf import settings
 
 from .forms import OrderForm
 from store.models import Product
-from .models import OrderLineItem
+from .models import Order, OrderLineItem
 from basket.contexts import basket_contents
 
 import stripe
@@ -94,4 +94,24 @@ def checkout(request):
         }
 
         return render(request, template, context)
+
+def checkout_success(request, order_number):
+    """
+    A view to handle successful checkout
+    """
+
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_number=order_number)
+    messages.success(request, f'Order place with number {order_number} \
+        an e-mail has been sent to confirm!')
+
+    if basket in request.session:
+        del request.session['basket']
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+    }
+
+    return render(request, template, context)
 
