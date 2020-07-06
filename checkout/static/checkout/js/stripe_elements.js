@@ -21,3 +21,16 @@ let style = {
 };
 let card = elements.create('card', {style: style});
 card.mount('#card-element');
+
+
+card.addEventListener('change', function(event){
+    let errorCont = document.getElementById('card-errors');
+    if (event.error) {
+        let html = `<span><p class="text-danger">${event.error.message}</span>`
+        $(errorCont).html(html) 
+        
+    }
+    else {
+        errorCont.textContent = ''
+    }
+})
