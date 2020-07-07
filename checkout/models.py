@@ -17,7 +17,7 @@ class Order(models.Model):
     email = models.EmailField(max_length=256, null=False, blank=False)
     telephone_number = models.CharField(max_length=20, null=False, blank=False)
     street_address1 = models.CharField(max_length=128, null=False, blank=False)
-    street_address2 = models.CharField(max_length=128, null=False, blank=False)
+    street_address2 = models.CharField(max_length=128, null=True, blank=True)
     city_town = models.CharField(max_length=128, null=False, blank=False)
     county_state = models.CharField(max_length=64, null=True, blank=True)
     postcode_zip = models.CharField(max_length=12, null=False, blank=False)

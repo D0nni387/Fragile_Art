@@ -9,18 +9,14 @@ from basket.contexts import basket_contents
 
 import stripe
 
-
 def checkout(request):
     """A View to return the checkout form"""
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-
     if request.method == 'POST':
-
         basket = request.session.get('basket', {})
-
         form_data = {
             'first_name': request.POST['first_name'],
             'last_name': request.POST['last_name'],
@@ -45,23 +41,16 @@ def checkout(request):
                         quantity=quantity,
                     )
                     order_line_item.save()
-                    
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your basket wasn't found. ")
-                        
-                    )
+                    messages.error(request, ("One of the products in your basket wasn't found."))
                     order.delete()
                     return redirect(reverse('view_basket'))
-
             request.session['save_info'] = 'save-info' in request.POST
-            
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your submission, please recheck.')
             return redirect(reverse('store'))
     else:
-
         basket = request.session.get('basket', {})
         if not basket:
             messages.error(request, "Errrr there is nothing in here at all!")
@@ -77,8 +66,6 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY
         )
-
-        
         order_form = OrderForm()
         template = 'checkout/checkout.html'
         context = {
@@ -95,8 +82,6 @@ def checkout_success(request, order_number):
 
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order place with number {order_number} \
-        an e-mail has been sent to confirm!')
 
     if 'basket' in request.session:
         del request.session['basket']
