@@ -22,7 +22,7 @@
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="col-12">
-                        <p>£{{ product.price }}</p>
+                        <p class="store-price">£{{ product.price }}</p>
                     </div>
                     <div class="col-12">
                         <p class="mt-3"><strong>Quantity</strong></p>
@@ -53,6 +53,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 {% endblock %}
