@@ -1,5 +1,7 @@
 .card {
     border: 0;
+    padding-bottom: 3rem;
+    border-radius: .5rem;
 
 }
 
@@ -9,6 +11,10 @@
 
 .card-body {
     padding: 0.5rem;
+}
+
+.card-info {
+    padding: 0;
 }
 
 .store-format {
