@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+{% include 'includes/nav.html' %}
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h1>Checkout Completed</h1>
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-12">
+            <p>Thank you for your order, a confirmation has been sent to {{ order.email }}</p>
+        </div>
+        <div class="col-12">
+            <p>Order Recap</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
