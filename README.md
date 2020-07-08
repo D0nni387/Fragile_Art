@@ -225,11 +225,68 @@ Below is an example of how to deploy this site locally based on using VsCode IDE
 
 - [VScode](https://code.visualstudio.com/) IDE Local development tool
 - [python](https://www.python.org/downloads/) Documentation is based on Python v3.7.7
-- PIP 
+- PIP package installer
 - [AWS-S3](https://aws.amazon.com/s3/) Web based cloud storage
 - [Stripe](https://stripe.com/gb) Payment infrastructure
 
-Credits
+### Deploying Locally
+
+1. Clone a copy of the repository by clicking code at the top of the page and selecting 'Download Zip' when this has downloaded, extract the files to your folder of choice.
+   Alternatively if you have git installed on your client you can run the following command from the terminal 
+
+   ```bash
+   git clone https://github.com/D0nni387/FragileArt.git
+   ```
+
+1. Open us your local IDE (For this example we will be using VScode as linked in the requirements) and open the working folder.
+
+1. Ideally you will want to work within a virtual environment to allow all packages to be kept within the project, this can be installed using the following command (please note some IDE's require pip3 instead of pip, please check with the documentation for your chosen IDE)
+
+```bash
+pip install virtualenv
+```
+
+1. To install the virtual environment within the project folder run the following command.
+
+```bash
+python -m .venv .env (the .env can be replaced by your folder name of choice)
+```
+
+1. To activate the virtual environment navigate to the below dir and run activate.bat
+
+```bash
+[folderinstalled]\scripts\activate\activate.bat
+```
+
+1. Next we need to install all modules required by the project to run, use the follow
+
+```bash
+pip install -r requirements.txt
+```
+
+1. Create a new folder within the root dir called .vscode and a file inside called settings.json. Within this file add the following lines to set up the enviromental variables.
+
+```bash
+{
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": ".env\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": ["--load-plugins=pylint_flask"],
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.env.windows": {
+      "SECRET_KEY": "[Your key]",
+      "DEV": "1",
+      "HOSTNAME": "0.0.0.0",
+      "PORT": "5000",
+      "STRIPE_PUBLIC_KEY": "[Your Key]",
+      "STRIPE_SECRET_KEY": "[Your Key]",
+      "DEBUG": "True",
+    }
+  }
+```
+
 
 ## Credits
 
