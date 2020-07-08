@@ -15,7 +15,8 @@ a:link {
 }
 
 .nav-layout {
-    margin-left: auto; 
+    margin-left: auto;
+    padding-right: 2rem; 
 }
 
 .navbar-light .navbar-nav .nav-link {
