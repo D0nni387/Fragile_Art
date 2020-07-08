@@ -317,7 +317,41 @@ python manage.py loaddata store/fixtures/products.json
 python manage.py loaddata clients/fixtures/clients.json
 ```
 
+### Deploying to Heroku
 
+To run this application in an online environment you will need to deploy the code to Heroku.
+Before moving on to this section please ensure you have followed the instructions for local deployment and this has been successful
+
+1. Either create an account at [Heroku](https://www.heroku.com/) or log in to your account
+1. Set up a new app under a unique name
+1. In the resources section, in the addons field type the below command and select the free cost option
+
+```bash
+heroku Postgres
+```
+
+1. in the settings tab select Reveal Config Vars and copy the pre populated DATABASE_URL into your settings.py file in your project
+1. in the Config Vars in Heroku you will need to populate with the following keys
+
+|          Key          |     Value    |
+|:---------------------:|:------------:|
+| AWS_ACCESS_KEY_ID     | [your value] |
+| AWS_SECRET_ACCESS_KEY | [your value] |
+| SECRET_KEY            | [your value] |
+| STRIPE_PUBLIC_KEY     | [your value] |
+| STRIPE_SECRET_KEY     | [your value] |
+
+1. Now this has been configured you will now migrate the local database to the cloud database using the migrate command as below
+
+```bash
+python manage.py migrate
+```
+
+1. Next you will need to create a super user and populate the database as described in the database set up section
+1. When the migrations and data has been loaded, in your Heroku dashboard select the Deploy tab
+1. From here select the Github option and connect the repository from GitHub and select the branch (Master) to deploy from.
+1. It is advised to select automatic deployment to ensure for each push to Github the hosted version is up to date.
+1. When this has deployed select open app from the top bar of the Heroku App.
 
 ## Credits
 
