@@ -219,7 +219,17 @@ The contact page allows the user a variety of methods to contact the artist in r
 
 ## Deployment
 
-Lots of text here about doing things!
+Below is an example of how to deploy this site locally based on using VsCode IDE, deploying to Heroku using Amazon S3 for hosting of static and media files. This will allow the site to deploy automatically with commits to the master branch. The code can also be run locally.
+
+### Deployment Requirements
+
+- [VScode](https://code.visualstudio.com/) IDE Local development tool
+- [python](https://www.python.org/downloads/) Documentation is based on Python v3.7.7
+- PIP 
+- [AWS-S3](https://aws.amazon.com/s3/) Web based cloud storage
+- [Stripe](https://stripe.com/gb) Payment infrastructure
+
+Credits
 
 ## Credits
 
