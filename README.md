@@ -264,7 +264,7 @@ python -m .venv .env (the .env can be replaced by your folder name of choice)
 pip install -r requirements.txt
 ```
 
-1. Create a new folder within the root dir called .vscode and a file inside called settings.json. Within this file add the following lines to set up the enviromental variables.
+1. Create a new folder within the root dir called .vscode and a file inside called settings.json. Within this file add the following lines to set up the environmental variables.
 
 ```bash
 {
@@ -286,6 +286,37 @@ pip install -r requirements.txt
     }
   }
 ```
+
+### Database setup
+
+1. To set up your database you will first need to run the following command 
+
+```bash
+python manage.py migrate
+```
+
+1. To create a super user to allow you to access the admin panel run the following command in your terminal and complete the required information as prompted
+
+```bash
+python manage.py createsuperuser
+```
+
+1. From there you should now be able to run the server using the following command
+
+```bash
+python manage.py runserver
+```
+
+1. If everything has been correctly configure you should not get a message giving you a link to your locally hosted site usually at http://127.0.0.1:8000
+
+1. Next close the server in your terminal using ctrl+c (cmd+c on mac) and run the following commands to populate the database
+
+```bash
+python manage.py loaddata store/fixtures/categories.json
+python manage.py loaddata store/fixtures/products.json
+python manage.py loaddata clients/fixtures/clients.json
+```
+
 
 
 ## Credits
