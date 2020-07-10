@@ -4,6 +4,7 @@ from django.conf import settings
 
 from store.models import Product
 
+from django_countries.fields import CountryField
 import uuid
 
 # Create your models here.
@@ -21,7 +22,7 @@ class Order(models.Model):
     city_town = models.CharField(max_length=128, null=False, blank=False)
     county_state = models.CharField(max_length=64, null=True, blank=True)
     postcode_zip = models.CharField(max_length=12, null=False, blank=False)
-    country = models.CharField(max_length=25, null=False, blank=False)
+    country = CountryField(blank_label='Country*', null=False, blank=False)
     order_date = models.DateTimeField(auto_now_add=True)
     total_order = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     delivery_charge = models.DecimalField(max_digits=5, decimal_places=2, null=False, default=0)
