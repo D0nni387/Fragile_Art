@@ -17,4 +17,17 @@
             <h1>My Profile</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+           <form action="{% url 'user' %}" method="POST" id="user-update-form">
+               {% csrf_token %}
+               {{ form|crispy }}
+           </form>
+        </div>
+        {% for order in orders %}
+        <div>
+            {{ order.email }}
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
