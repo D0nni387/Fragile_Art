@@ -26,8 +26,12 @@
         </div>
         {% for order in orders %}
         <div>
-            {{ order.email }}
+            {{ order.order_number }}
+            {{ order.order_date }}
         </div>
+        {% for item in order.lineitems.all %}
+        <p>{{ item.product.name }}</p>
+        {% endfor %}
         {% endfor %}
     </div>
 {% endblock %}

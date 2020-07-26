@@ -5,6 +5,8 @@ from django.conf import settings
 from .forms import OrderForm
 from store.models import Product
 from .models import Order, OrderLineItem
+from users.forms import UserProfile
+from users.models import UserProfile
 from basket.contexts import basket_contents
 
 import stripe
@@ -82,6 +84,10 @@ def checkout_success(request, order_number):
 
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    user = UserProfile.objects.get(user=request.user)
+    order.user_profile = user
+    order.save()
+
 
     if 'basket' in request.session:
         del request.session['basket']
