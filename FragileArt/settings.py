@@ -91,9 +91,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth'),
-            
+            os.path.join(BASE_DIR,'templates'), 
+            os.path.join(BASE_DIR,'templates', 'allauth'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -112,15 +111,13 @@ TEMPLATES = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = [
-    
+AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    
-]
+)
 
 WSGI_APPLICATION = 'FragileArt.wsgi.application'
 
@@ -131,11 +128,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 6
-LOGIN_URL = 'accounts/login/'
-LOGIN_REDIRECT_URL = '/success'
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/store/'
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
