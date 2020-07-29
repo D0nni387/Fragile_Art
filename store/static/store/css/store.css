@@ -25,3 +25,15 @@
     font-size: 3rem;
     font-weight: 600;
 }
+
+.cat-format {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.badge-color {
+    color: #ffffff;
+    background-color: #313e48;
+    font-size: 2rem;
+}

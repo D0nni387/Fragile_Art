@@ -205,15 +205,91 @@ The contact page allows the user a variety of methods to contact the artist in r
 
 ## Testing
 
-### Validators
+No automated testing has been used on this project, i have opted to do all testing manually and through numerous user experiences.
 
 ### UI
 
+
+1. Navigation
+    - Hovering over each link has the desired response from the nav bar
+    - *portfolio* takes the user to the portfolio and all items display as expected
+    - *store* navigates the user to the store and all items display correctly
+    - *clients* takes the user to the clients page with all items displaying correctly
+    - *contact* takes the user to the contact page with the form displaying as expected
+    - *sign-in* produces the sign in form and the user can either navigate to create an account or create an account and logs the user in
+    - *Sign-out* removes the user from the session and returns
+    - User can add items to the *cart* calculations work as expected.
+
 ### Functionality
+
+1. Portfolio
+    - Items display correctly and any added to the database automatically are added to the DOM
+    - Rollover information is displayed as expected
+
+2. Store
+    - Items all displaying correctly with correct price and category of each item
+    - On click the user is taken to the products specific page
+    - User can choose a quantity and add to the cart
+    - Correct information is passed to the cart with images and all relevent information
+
+3. Clients
+    - All client information is displayed with images as expected.
+
+4. Contact
+    - User is able to complete the contact form and submit.
+    - User is presented with a thank you message to confirm result.
+
+5. Login/log out
+    - User is able to log in when logged out and retrieve their party.
+    - When user is logged in and selects log out the username is removed from the session correctly.
+
+6. Shopping Cark
+    - User is able to see their current cart total from the navigation bar.
+    - User is able to add items to the cart from the store
+    - Multiple lines are displaying correctly.
+    - User can edit the quantity of the Cart or delete when needed
+
+7. Checkout
+    - User is able to complete the billing form with their information.
+    - If the user has default delivery information this is autocompleted.
+    - User can complete the purchase using 4242 4242 4242 4242 42/42 42424
+    - User is presented with an order confirmation.
+    - Confirmed orders are viewable in the users profile.
 
 ### Responsive Design
 
+1. Mobile
+    - All pages tested on Android and current iOS platforms and returns as expected.
+    - No overflow seen in testing and all information is displayed correctly.
+    - Navbar is working as collapse menu working as expected.
+
+2. Tablet
+    - All pages testing in Chrome dev tools
+    - All Loading as expected with no overflow seen
+    - Navbar responding correctly
+
+3. Desktop
+    - Tested with Safari & Chrome
+    - All items load as expected
+    - Navbar working and displaying correctly
+    - No overflow issues experienced
+    - All items in correct positioning.
+
 ### Issue & Resolutions
+
+---
+* Problem: Confirmation e-mail link produces a 404 error.
+* Cause: The environmental variable isn't configured correctly.
+* Resolution: adding an initial / to the env path allows the confirmation e-mail to work correctly.
+---
+* Problem: Custom AllAuth templates not loading
+* Cause: Base template no correctly being referenced.
+* Resolution: removing allauth from the templates file and reinstating fixed this issue.
+---
+* Problem: Application won't deploy.
+* Cause: A migration file was deleted accidently and hadn't been commited to GitHub
+* Resolution: The only sure fire way i found to fix this was to 'nuke' the database on the server, delete all local migration files and run all migrations again and reimporting all fixtures.
+---
 
 ### Unresolved Issues
 
