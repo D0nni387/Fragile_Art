@@ -15,3 +15,14 @@ def portfolio(request):
     }
 
     return render(request, 'portfolio/portfolio.html', context)
+
+def portfolio_detail(request, item_id):
+    """A View to display and individual product detail"""
+
+    product = get_object_or_404(Product, pk=item_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'portfolio/portfolio-detail.html', context)

@@ -28,8 +28,7 @@
             My Account
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Account Details</a>
-            <a class="dropdown-item" href="#">My Orders</a>
+            <a class="dropdown-item" href="{% url 'user' %}">Account Details</a>
             <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
           </div>
           {% else %}
