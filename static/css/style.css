@@ -79,3 +79,7 @@ a:link {
     color: #fff;
 }
 
+.link-style {
+    text-decoration: none;
+    color: #D9D9D9
+}

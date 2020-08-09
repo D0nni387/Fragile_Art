@@ -1,3 +1,7 @@
+.store-layout {
+    padding: 2rem 8rem;
+}
+
 .card {
     border: 0;
     padding-bottom: 3rem;
@@ -37,3 +41,4 @@
     background-color: #313e48;
     font-size: 2rem;
 }
+
