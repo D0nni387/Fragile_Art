@@ -86,3 +86,24 @@ a:link {
     text-decoration: none;
     color: #fff;
 }
+
+.social-icons {
+    text-decoration: none;
+    color: #323e48;
+    font-size: 3rem;
+    padding: 0 2rem;
+}
+
+.social-icons:hover {
+    text-decoration: none;
+    color: #000;
+    font-size: 3rem;
+    padding: 0 2rem;
+    transition: ease-in-out 2s;
+}
+
+.portfolio-text {
+    text-align: center;
+    padding-top: 12rem;
+    color: #323e48;
+}
