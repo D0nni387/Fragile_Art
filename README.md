@@ -42,7 +42,7 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 
 # UX
 
-#### Visitor Goals
+## Visitor Goals
 
 - Provide access to a portfolio of works for visitors to browse.
 - Give potential clients a list of previous clients and their type of business.
@@ -52,17 +52,29 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 - Allow the visitor to be able to create and account, add items to their basket and checkout when they have completed shopping.
 - Allow the visitor to return to their basket if they leave and come back to the site.
 
-#### User Stories
+### User Stories
 
-- As a visitor i want to be able to see their portfolio and discover items i haven't seen before.
-- As a visitor i want to be able to purchase items that i like.
-- As a visitor i want to be able to shop with confidence and pay with my card directly not through a third party site.
-- As a visitor i want to be able to contact the artist to discuss my own projects.
-- As a visitor and potential client i want to be able to see their past collection of works and clients.
-- As a visitor i want to be able to find social media links so i can follow the artists latest works.
+#### User
+
+- As a user i want to be able to see their portfolio and discover items i haven't seen before.
+- As a user i want to be able to purchase items that i like.
+- As a user i want to be able to shop with confidence and pay with my card directly not through a third party site.
+- As a user i want to be able to contact the artist to discuss my own projects.
+- As a user and potential client i want to be able to see their past collection of works and clients.
+- As a user i want to be able to find social media links so i can follow the artists latest works.
+
+#### Admin
+
 - As an Admin i want to be able to add products easily.
 - As an Admin i want to be able to manage orders in a simple and easy manner.
 - As an Admin i want to be able to upload to my portfolio easily.
+
+#### Developer
+
+- As a developer i want to ensure the user can't break the flow of the site with correct defensive design choices.
+- As a developer i want to ensure an authenticated user can access all required information correctly.
+- As a developer i want to include options for the admin to quickly edit the site.
+
 
 ### Design Choices
 
@@ -77,8 +89,6 @@ As a secondary font i have chosen to use [Montserrat](https://fonts.google.com/s
 The client has specified #323e48 as their desired choice but has said they would allow anything to go with this as long as it contrasted well with the main colour choice.
 
 With this information i have chosen to use the following colours to provide a great contrast and to help the content stand out.
-
-#D9D9D9 #C5DCDD
 
 <div style="text-align:center;height:5rem;">
 <img src="https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/media/colours.png"></img>
@@ -180,7 +190,7 @@ The contact page allows the user a variety of methods to contact the artist in r
 | Town/City    | town_or_city    | string max length 100 | CharField   |
 | County/State | county_or_state | string max length 100 | CharField   |
 | Postcode     | postcode        | string max length 8   | CharField   |
-| Country      | country         | pycountry select      | Option      |
+| Country      | country         | country select        | Option      |
 | Order Date   | order_date      | datetime.date.today   | DateField   |
 | Paid         | paid            | False default Stripe  | Boolean     |
 
@@ -198,8 +208,8 @@ The contact page allows the user a variety of methods to contact the artist in r
 - [Django](https://www.djangoproject.com/)
 - [Bootstrap](https://getbootstrap.com/)
 
-### Tools
-
+### Libraries
+- [Jquery](https://jquery.com/)
 - [Sweet Alert](https://sweetalert2.github.io/)
 - [Stripe Payments](https://stripe.com/)
 
@@ -222,34 +232,34 @@ No automated testing has been used on this project, i have opted to do all testi
 
 ### Functionality
 
-1. Portfolio
+1. *Portfolio*
     - Items display correctly and any added to the database automatically are added to the DOM
     - Rollover information is displayed as expected
 
-2. Store
+2. *Store*
     - Items all displaying correctly with correct price and category of each item
     - On click the user is taken to the products specific page
     - User can choose a quantity and add to the cart
     - Correct information is passed to the cart with images and all relevent information
 
-3. Clients
+3. *Clients*
     - All client information is displayed with images as expected.
 
-4. Contact
+4. *Contact*
     - User is able to complete the contact form and submit.
     - User is presented with a thank you message to confirm result.
 
-5. Login/log out
+5. *Login/log out*
     - User is able to log in when logged out and retrieve their party.
     - When user is logged in and selects log out the username is removed from the session correctly.
 
-6. Shopping Cark
+6. *Shopping Basket*
     - User is able to see their current cart total from the navigation bar.
     - User is able to add items to the cart from the store
     - Multiple lines are displaying correctly.
     - User can edit the quantity of the Cart or delete when needed
 
-7. Checkout
+7. *Checkout*
     - User is able to complete the billing form with their information.
     - If the user has default delivery information this is autocompleted.
     - User can complete the purchase using 4242 4242 4242 4242 42/42 42424
@@ -258,24 +268,24 @@ No automated testing has been used on this project, i have opted to do all testi
 
 ### Responsive Design
 
-1. Mobile
+1. *Mobile*
     - All pages tested on Android and current iOS platforms and returns as expected.
     - No overflow seen in testing and all information is displayed correctly.
     - Navbar is working as collapse menu working as expected.
 
-2. Tablet
+2. *Tablet*
     - All pages testing in Chrome dev tools
     - All Loading as expected with no overflow seen
     - Navbar responding correctly
 
-3. Desktop
+3. *Desktop*
     - Tested with Safari & Chrome
     - All items load as expected
     - Navbar working and displaying correctly
     - No overflow issues experienced
     - All items in correct positioning.
 
-### Issue & Resolutions
+### Bugs
 
 ---
 * Problem: Confirmation e-mail link produces a 404 error.
@@ -295,7 +305,7 @@ No automated testing has been used on this project, i have opted to do all testi
 
 ## Deployment
 
-Below is an example of how to deploy this site locally based on using VsCode IDE, deploying to Heroku using Amazon S3 for hosting of static and media files. This will allow the site to deploy automatically with commits to the master branch. The code can also be run locally.
+Below is an example of how to deploy this site locally based on using *VsCode IDE*, deploying to Heroku using *Amazon S3* for hosting of static and media files. This will allow the site to deploy automatically with commits to the master branch. The code can also be run locally.
 
 ### Deployment Requirements
 
@@ -365,7 +375,7 @@ pip install -r requirements.txt
 
 ### Database setup
 
-1. To set up your database you will first need to run the following command 
+1. To set up your database you will first need to run the following command
 
 ```bash
 python manage.py migrate
@@ -395,7 +405,7 @@ python manage.py loaddata clients/fixtures/clients.json
 
 ### Deploying to Heroku
 
-To run this application in an online environment you will need to deploy the code to Heroku.
+To run this application in an online environment you will need to deploy the code to *Heroku*.
 Before moving on to this section please ensure you have followed the instructions for local deployment and this has been successful
 
 1. Either create an account at [Heroku](https://www.heroku.com/) or log in to your account
@@ -424,10 +434,10 @@ python manage.py migrate
 ```
 
 1. Next you will need to create a super user and populate the database as described in the database set up section
-1. When the migrations and data has been loaded, in your Heroku dashboard select the Deploy tab
+1. When the migrations and data has been loaded, in your *Heroku* dashboard select the Deploy tab
 1. From here select the Github option and connect the repository from GitHub and select the branch (Master) to deploy from.
 1. It is advised to select automatic deployment to ensure for each push to Github the hosted version is up to date.
-1. When this has deployed select open app from the top bar of the Heroku App.
+1. When this has deployed select open app from the top bar of the *Heroku* App.
 
 ## Credits
 
