@@ -74,12 +74,15 @@ a:link {
     margin-top: 3rem;
 }
 
-.cart-link {
-    text-decoration: none;
-    color: #fff;
+.container-format {
+    margin-top: 3rem;
 }
 
 .link-style {
     text-decoration: none;
     color: #D9D9D9
+}
+.cart-link {
+    text-decoration: none;
+    color: #fff;
 }
