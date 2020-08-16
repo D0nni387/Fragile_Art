@@ -19,19 +19,33 @@
     </div>
     <div class="row">
         <div class="col-12">
-           <form action="{% url 'user' %}" method="POST" id="user-update-form">
-               {% csrf_token %}
-               {{ form|crispy }}
-           </form>
+            {% for order in orders %}
+
+            <div class="row">
+
+           
+            <div class="col-10">
+                <a class="btn" data-toggle="collapse" href="#collapse{{order.order_number}}" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    {{ order.order_number }} - {{ order.order_date }}
+
+                </a>
+            </div>
+            <div class="col-2">
+                <p>£{{ order.grand_total }}</p>
+            </div>
         </div>
-        {% for order in orders %}
-        <div>
-            {{ order.order_number }}
-            {{ order.order_date }}
+            <div class="collapse" id="collapse{{order.order_number}}">
+                <div class="card card-body">
+                    {% for item in order.lineitems.all %}
+                    <img class="order-image" src="/media/{{ item.product.image }}">
+                    <p>{{ item.product.name }}</p>
+                    <p>£{{ item.product.price }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            {% endfor %}
         </div>
-        {% for item in order.lineitems.all %}
-        <p>{{ item.product.name }}</p>
-        {% endfor %}
-        {% endfor %}
-    </div>
-{% endblock %}
+        {% endblock %}
