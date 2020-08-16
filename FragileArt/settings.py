@@ -159,7 +159,7 @@ SOCIALACCOUNT_PROVIDERS = {
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://dnzsafsmcjlzfp:9b473d7bd2e1d6944af178dac64bd5fbd2ac8f7a55d30cc62e298c2c197409b9@ec2-54-247-79-178.eu-west-1.compute.amazonaws.com:5432/ddta1384h964av'),
+    'default': dj_database_url.parse('postgres://mkaoykbvjohavc:1b0a3f14229f26853361b9487de40123b4ea882c865dd82b6aa9772d97dad0f3@ec2-54-247-79-178.eu-west-1.compute.amazonaws.com:5432/d5379nlkpi1tn'),
     
 }
 

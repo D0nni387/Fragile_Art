@@ -13,7 +13,6 @@ def user(request):
     user = get_object_or_404(UserProfile, user=request.user)
     form = ProfileForm(instance=user)
     orders = user.orders.all()
-    print(request)
 
     template = 'users/user.html'
     context = {
@@ -26,10 +25,10 @@ def user(request):
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
  
-
+    
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
     }
-
+    
     return render(request, template, context)
