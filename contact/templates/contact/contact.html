@@ -6,13 +6,17 @@
 {% include 'includes/nav.html' %}
 {% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'contact/css/contact.css' %}" type="text/css">
+{% endblock %}
+
 {% block content %}
 
 <div class="container container-format">
-    <div class="row information-format">
+    <div class="row information-format form-position">
         <div class="col-12 align-self-center">
             <h1>Get in touch!</h1>
-            <form>
+            <form class="form-size">
                 <div class="form-group">
                     <input type="text" class="form-control" id="yourName" placeholder="Your Name">
                 </div>
