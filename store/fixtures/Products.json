@@ -216,7 +216,7 @@
         "description": "Branding, laminate, poster and flyer design for Sheffield’s Annual Heavy Music Festival, FestiVILE",
         "price": 0.00,
         "category": 3,
-        "image": "festivile.jpg",
+        "image": "festivile.png",
         "client": "Festivile (Sheffield Corporation)",
         "tools": "Pen, Ink, Photoshop",
         "is_sold": false,
@@ -461,21 +461,6 @@
         "tools": "Pen, Ink, Photoshop",
         "is_sold": true,
         "sale_type": "T-Shirt"
-    } 
-},
-{
-    "pk": 34,
-    "model": "store.product",
-    "fields": {
-        "name": "Bedford Audio Website Concepts",
-        "description": "Various layout and design concepts for the Bedford Audio Website over the years.",
-        "price": 0.00,
-        "category": 8,
-        "image": "bedford.png",
-        "client": "Devil Sold His Soul",
-        "tools": "Illustrator, Photoshop",
-        "is_sold": false,
-        "sale_type": "concept"
     } 
 }
 ]
