@@ -91,7 +91,11 @@
                 </table>
             </div>
             {% else %}
+            <div class="col-12 empty-title">
             <h3>You're basket is empty</h3>
+            <a href="{% url 'store' %}" class="btn btn-secondary">Start shopping!</a>
+            </div>
+
             {% endif %}
         </div>
     </div>
