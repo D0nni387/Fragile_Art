@@ -219,71 +219,74 @@ No automated testing has been used on this project, i have opted to do all testi
 
 ### UI
 
+- <strong>Implementation</strong> 🏭:
+When i had set up the products fixtures and loaded into the database i could then view all saleable items in the store, i wanted to ensure all products loaded as expected and that item information was visable when selected.
 
-1. Navigation
-    - Hovering over each link has the desired response from the nav bar
-    - *portfolio* takes the user to the portfolio and all items display as expected
-    - *store* navigates the user to the store and all items display correctly
-    - *clients* takes the user to the clients page with all items displaying correctly
-    - *contact* takes the user to the contact page with the form displaying as expected
-    - *sign-in* produces the sign in form and the user can either navigate to create an account or create an account and logs the user in
-    - *Sign-out* removes the user from the session and returns
-    - User can add items to the *cart* calculations work as expected.
+- <strong>Test</strong> 🧪:
+To test this, I went through each item and loaded the products information page, then looked at changing the url to ensure each item was loading correctly
 
-### Functionality
+- <strong>Result</strong> 🏆:
+All products loaded as expected to the main store page, some items were missing their images but they were still selectable and loaded their page correctly. When amending the url all items again loaded as expected however if i tried to access an item id that didn't exist i was presented with a 404 page.
 
-1. *Portfolio*
-    - Items display correctly and any added to the database automatically are added to the DOM
-    - Rollover information is displayed as expected
+- <strong>Verdict</strong> ✅:
+This test passed in it's basic form, amendments are required to the fixtures to ensure all the items images load correctly, also as the 404 page is the generic template provided with Django creating a custom page to handle these errors is desireable.
 
-2. *Store*
-    - Items all displaying correctly with correct price and category of each item
-    - On click the user is taken to the products specific page
-    - User can choose a quantity and add to the cart
-    - Correct information is passed to the cart with images and all relevent information
+---
 
-3. *Clients*
-    - All client information is displayed with images as expected.
+- <strong>Implementation</strong> 🏭:
+As with the store the portfolio page is populated from all items even if they aren't saleable. i need to ensure these load correctly to their specific pages and the overlays work correctly.
 
-4. *Contact*
-    - User is able to complete the contact form and submit.
-    - User is presented with a thank you message to confirm result.
+- <strong>Test</strong> 🧪:
+To test this, I went through each item and loaded the portfolio item information page, then looked at changing the url to ensure each item was loading correctly
 
-5. *Login/log out*
-    - User is able to log in when logged out and retrieve their party.
-    - When user is logged in and selects log out the username is removed from the session correctly.
+- <strong>Result</strong> 🏆:
+All portfolio items again populated the main page correctly, some with missing images and when clicked presented their specific pages with information displaying correctly.
 
-6. *Shopping Basket*
-    - User is able to see their current cart total from the navigation bar.
-    - User is able to add items to the cart from the store
-    - Multiple lines are displaying correctly.
-    - User can edit the quantity of the Cart or delete when needed
+- <strong>Verdict</strong> ✅:
+This test was deemed to be a pass, some minor edits are needed to the fixtures to ensure when the items are loaded out of development branches they are displaying as expected.
 
-7. *Checkout*
-    - User is able to complete the billing form with their information.
-    - If the user has default delivery information this is autocompleted.
-    - User can complete the purchase using 4242 4242 4242 4242 42/42 42424
-    - User is presented with an order confirmation.
-    - Confirmed orders are viewable in the users profile.
+---
 
-### Responsive Design
+- <strong>Implementation</strong> 🏭:
+As a user can purchase items without signing in, i wanted to ensure that an order can be completed from start to finish.
 
-1. *Mobile*
-    - All pages tested on Android and current iOS platforms and returns as expected.
-    - No overflow seen in testing and all information is displayed correctly.
-    - Navbar is working as collapse menu working as expected.
+- <strong>Test</strong> 🧪:
+To test this i will select items at random and add them to the basket and proceed through checkout.
 
-2. *Tablet*
-    - All pages testing in Chrome dev tools
-    - All Loading as expected with no overflow seen
-    - Navbar responding correctly
+- <strong>Result</strong> 🏆:
+Items were added to the basket correctly and the totals calculated as expected, going through the checkout process i was able to complete the order with stripes debug card ref and the order was confirmed and added to the db correctly.
 
-3. *Desktop*
-    - Tested with Safari & Chrome
-    - All items load as expected
-    - Navbar working and displaying correctly
-    - No overflow issues experienced
-    - All items in correct positioning.
+- <strong>Verdict</strong> ✅:
+This test completed as expected without bugs.
+
+---
+
+- <strong>Implementation</strong> 🏭:
+With a logged in user, i want to make sure the user can view previous orders through the users account page.
+
+- <strong>Test</strong> 🧪:
+To test this i created a new user and proceeded to add items to the basket and complete the checkout process.
+
+- <strong>Result</strong> 🏆:
+As expected the checkout process completed and upon checking the users account page i could see the order details. upon completing multiple orders i was able to view these in a list as designed
+
+- <strong>Verdict</strong> ✅:
+This test completed as expected without bugs, it did flag a minor style change needed to the account page but information was present.
+
+---
+
+- <strong>Implementation</strong> 🏭:
+To ensure the user can navigate the site as expected i need to test each view and link to ensure the user isn't 'lost' within the page.
+
+- <strong>Test</strong> 🧪:
+This test will be carried out by systematically navigating to each page from the previous and all links are clicked until all checked.
+
+- <strong>Result</strong> 🏆:
+Each page and link was checked and each provided a positive result, at no point was the user sent to an unexpected destination.
+
+- <strong>Verdict</strong> ✅:
+This test passed and no amendments were required.
+
 
 ### Bugs
 
