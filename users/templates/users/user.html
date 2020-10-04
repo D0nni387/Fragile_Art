@@ -11,41 +11,48 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <h1>My Profile</h1>
-        </div>
-    </div>
+<div class="container container-format">
     <div class="row">
         <div class="col-12">
-            {% for order in orders %}
-
-            <div class="row">
-
-           
-            <div class="col-10">
-                <a class="btn" data-toggle="collapse" href="#collapse{{order.order_number}}" role="button"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    {{ order.order_number }} - {{ order.order_date }}
-
-                </a>
-            </div>
-            <div class="col-2">
-                <p>£{{ order.grand_total }}</p>
-            </div>
+            <h1 class="title-format">My Profile</h1>
         </div>
-            <div class="collapse" id="collapse{{order.order_number}}">
-                <div class="card card-body">
-                    {% for item in order.lineitems.all %}
-                    <img class="order-image" src="/media/{{ item.product.image }}">
-                    <p>{{ item.product.name }}</p>
-                    <p>£{{ item.product.price }}</p>
-                    {% endfor %}
-                </div>
-            </div>
-
-
-            {% endfor %}
+        <div class="col-12">
+            <p>Welcome back {{user.username}}</p>
+            <p>We currently have your E-mail as {{ user.email }}</p>
+            <a href="#">Change my password</a>
         </div>
-        {% endblock %}
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h2 class="title-format">My Previous Orders</h2>
+        </div>
+        {% if orders %}
+        {% for order in orders %}
+        <div class="col-10">
+            <a class="btn" data-toggle="collapse" href="#collapse{{order.order_number}}" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                - {{ order.order_date }} -
+            </a>
+        </div>
+        <div class="col-2">
+            <p>£{{ order.grand_total }}</p>
+        </div>
+    </div>
+
+    {% for item in order.lineitems.all %}
+    <div class="row order-table">
+        <div class="collapse col-sm-6 col-md-3 order-item" id="collapse{{order.order_number}}">
+            <img class="order-image" src="/media/{{ item.product.image }}">
+            <p>{{item.quantity}}x {{ item.product.name }} £{{ item.product.price }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+
+    {% endfor %}
+    {% else %}
+    <p>You've not placed any orders yet!</p>
+    {% endif %}
+</div>
+{% endblock %}
