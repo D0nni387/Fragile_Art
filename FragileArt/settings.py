@@ -69,6 +69,8 @@ INSTALLED_APPS = [
     #additionals
 
     'crispy_forms',
+
+    'sweetify'
 ]
 
 MIDDLEWARE = [
@@ -236,3 +238,6 @@ DELIVERY_PERCENTAGE = 15
 STRIPE_CURRENCY = 'GBP'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+
+#sweetalert specification
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
