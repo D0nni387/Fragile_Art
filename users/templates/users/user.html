@@ -42,17 +42,31 @@
 
     {% for item in order.lineitems.all %}
     <div class="row order-table">
-        <div class="collapse col-sm-6 col-md-3 order-item" id="collapse{{order.order_number}}">
-            <img class="order-image" src="/media/{{ item.product.image }}">
-            <p>{{item.quantity}}x {{ item.product.name }} £{{ item.product.price }}</p>
+        <div class="collapse col-12 order-item" id="collapse{{order.order_number}}">
+            <div class="row">
+                <div class="col-6 item-image">
+                    <img class="order-image" src="/media/{{ item.product.image }}">
+                    <p>{{item.quantity}} x {{ item.product.name }} £{{ item.product.price }}</p>
+                </div>
+                <div class="col-6">
+                    <div class="card-body">
+                        <h5 class="card-title">Delivery To</h5>
+                        <p class="order-item">{{order.street_address1}}</p>
+                        <p class="order-item">{{order.city_town}}</p>
+                        <p class="order-item">{{order.county_state}}</p>
+                        <p class="order-item">{{order.postcode_zip}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    {% endfor %}
+</div>
+{% endfor %}
 
 
-    {% endfor %}
-    {% else %}
-    <p>You've not placed any orders yet!</p>
-    {% endif %}
+{% endfor %}
+{% else %}
+<p>You've not placed any orders yet!</p>
+{% endif %}
 </div>
 {% endblock %}

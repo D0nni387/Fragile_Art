@@ -17,5 +17,9 @@
 }
 
 .order-item {
-    padding: 1rem;
+    margin: 0;
+}
+
+.item-image {
+    padding-top: 2rem;
 }
