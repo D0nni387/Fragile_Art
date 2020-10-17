@@ -114,3 +114,11 @@ a:link {
 .collapse-format {
     text-align: right;
 }
+
+.page-header {
+    margin: 3rem;
+}
+
+.centered {
+    text-align: center;
+}
