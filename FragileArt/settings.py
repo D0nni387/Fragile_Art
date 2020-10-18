@@ -81,8 +81,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'FragileArt.urls'
@@ -153,13 +151,6 @@ SOCIALACCOUNT_PROVIDERS = {
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
-#}
-
 DATABASES = {
     'default': dj_database_url.parse('postgres://mkaoykbvjohavc:1b0a3f14229f26853361b9487de40123b4ea882c865dd82b6aa9772d97dad0f3@ec2-54-247-79-178.eu-west-1.compute.amazonaws.com:5432/d5379nlkpi1tn'),
     
@@ -203,26 +194,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-# if 'USE_AWS' in os.environ:
+if 'USE_AWS' in os.environ:
 
-  #  AWS_S3_OBJECT_PARAMETERS = {
-  #      'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-  #      'CacheControl': 'max-age=94608000',
-  #  }
+   AWS_S3_OBJECT_PARAMETERS = {
+       'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+       'CacheControl': 'max-age=94608000',
+   }
 
-  #  AWS_STORAGE_BUCKET_NAME = 'fragileart'
-  #  AWS_S3_REGION_NAME = 'eu-west-2'
-  #  AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-  #  AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-  #  AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+   AWS_STORAGE_BUCKET_NAME = 'fragileart'
+   AWS_S3_REGION_NAME = 'eu-west-2'
+   AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+   AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+   AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-  #  STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-  #  STATICFILES_LOCATION = 'static'
-  #  DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-  #  MEDIAFILES_LOCATION = 'media'
+   STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+   STATICFILES_LOCATION = 'static'
+   DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+   MEDIAFILES_LOCATION = 'media'
 
-   # STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-   # MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+   STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+   MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
