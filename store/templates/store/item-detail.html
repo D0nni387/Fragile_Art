@@ -28,9 +28,7 @@
                     <div class="col-12">
                         <div class="badge badge-secondary">{{ product.sale_type|capfirst }}</div>
                     </div>
-                    {% with product.size as s and product.sale_type as t %}
-
-                    {% if s %}
+                    {% with product.sale_type as t %}
                     {% if t == 'T-Shirt' %}
                     <div class="col-12">
                         <p><strong>Size:</strong></p>
@@ -50,7 +48,6 @@
                             <option value="Large">Large Postcard (A5 5.8" x 8.3")</option>
                         </select>
                     </div>
-                    {% endif %}
                     {% endif %}
                     {% endwith %}
                     <div class="col-12">
