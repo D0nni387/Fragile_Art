@@ -172,12 +172,15 @@ The contact page allows the user a variety of methods to contact the artist in r
 | Title              | Key In Database | Form Validation | Data Type |
 |--------------------|-----------------|-----------------|-----------|
 | Product Id         | _id             | No Validation   | Primary Key  |
-| Product Name       | prod_name       | string max length 100 | CharField |
-| Product Fancy Name | prod_fancy      | string max length 100 | CharField |
-| Has Size           | size            | False Default   | Boolean |
-| Sizes Available    | sizes           | string max length 4 | CharField |
-| Colour             | colour          | string max length 20 | string |
-| Price              | price           | Max Digits 6 Decimal Places 2 | Decimal Field |
+| Product Name       | name            | string max length 254 | CharField |
+| Product Category   | category        | string max length 100 | CharField |
+| Price              | price           | Max Digits 6 Decimal Places 2 | decimal field  |
+| Client             | client          | No validation | CharField |
+| description        | description     | No validation | CharField |
+| tools              | colour          | No validation | CharField |
+| is sold            | is_sold         | Default True | Boolean Field |
+| sale_type          | sale_type       | string max length 20| Decimal Field |
+| image              | image           | Null True Blank True | Image Field |
 
 #### Orders Table
 
