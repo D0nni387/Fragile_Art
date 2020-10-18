@@ -48,21 +48,25 @@
                     <img class="order-image" src="/media/{{ item.product.image }}">
                     <p>{{item.quantity}} x {{ item.product.name }} £{{ item.product.price }}</p>
                 </div>
-                <div class="col-6">
-                    <div class="card-body">
-                        <h5 class="card-title">Delivery To</h5>
-                        <p class="order-item">{{order.street_address1}}</p>
-                        <p class="order-item">{{order.city_town}}</p>
-                        <p class="order-item">{{order.county_state}}</p>
-                        <p class="order-item">{{order.postcode_zip}}</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
 </div>
 {% endfor %}
-
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card-body">
+                <h5 class="card-title">Delivery To</h5>
+                <p class="order-item">{{order.street_address1}}</p>
+                <p class="order-item">{{order.city_town}}</p>
+                <p class="order-item">{{order.county_state}}</p>
+                <p class="order-item">{{order.postcode_zip}}</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endfor %}
 {% else %}
