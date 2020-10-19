@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from os import path
 import dj_database_url
+if path.exists("env.py"):
+    import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,23 +34,24 @@ STATICFILES_DIRS = (
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY","")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEV")
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'fragile-art.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'fragile-art.herokuapp.com', 'fragileart.rwells.dev']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth', #Needed for Allauth, do not remove!
+    'django.contrib.auth',  # Needed for Allauth, do not remove!
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages', #Needed for Allauth, do not remove!
+    'django.contrib.messages',  # Needed for Allauth, do not remove!
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
@@ -66,7 +70,7 @@ INSTALLED_APPS = [
 
     'storages',
 
-    #additionals
+    # additionals
 
     'crispy_forms',
 
@@ -93,8 +97,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'templates'), 
-            os.path.join(BASE_DIR,'templates', 'allauth'),
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -152,11 +156,10 @@ SOCIALACCOUNT_PROVIDERS = {
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://mkaoykbvjohavc:1b0a3f14229f26853361b9487de40123b4ea882c865dd82b6aa9772d97dad0f3@ec2-54-247-79-178.eu-west-1.compute.amazonaws.com:5432/d5379nlkpi1tn'),
-    
-}
+if DEBUG:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL_DEV'))
+    }
 
 
 # Password validation
@@ -198,24 +201,24 @@ USE_TZ = True
 
 # if 'USE_AWS' in os.environ:
 
-  #  AWS_S3_OBJECT_PARAMETERS = {
-  #      'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-  #      'CacheControl': 'max-age=94608000',
-  #  }
+#  AWS_S3_OBJECT_PARAMETERS = {
+#      'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+#      'CacheControl': 'max-age=94608000',
+#  }
 
-  #  AWS_STORAGE_BUCKET_NAME = 'fragileart'
-  #  AWS_S3_REGION_NAME = 'eu-west-2'
-  #  AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-  #  AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-  #  AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+#  AWS_STORAGE_BUCKET_NAME = 'fragileart'
+#  AWS_S3_REGION_NAME = 'eu-west-2'
+#  AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+#  AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+#  AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-  #  STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-  #  STATICFILES_LOCATION = 'static'
-  #  DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-  #  MEDIAFILES_LOCATION = 'media'
+#  STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+#  STATICFILES_LOCATION = 'static'
+#  DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+#  MEDIAFILES_LOCATION = 'media'
 
-   # STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-   # MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
@@ -226,11 +229,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DELIVERY_PERCENTAGE = 15
 
-#stripe settings
+# stripe settings
 
 STRIPE_CURRENCY = 'GBP'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 
-#sweetalert specification
+# sweetalert specification
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
