@@ -18,7 +18,7 @@
         <div class="col-12">
             <p>Welcome back {{user.username}}</p>
             <p>We currently have your E-mail as {{ user.email }}</p>
-            <a href="#">Change my password</a>
+            <a href="{% url 'account_set_password' %}">Change my password</a>
         </div>
     </div>
 
@@ -28,48 +28,39 @@
         </div>
         {% if orders %}
         {% for order in orders %}
-        <div class="col-10">
+        <div class="col-4">
             <a class="btn" data-toggle="collapse" href="#collapse{{order.order_number}}" role="button"
                 aria-expanded="false" aria-controls="collapseExample">
-                - {{ order.order_date }} -
+                - {{ order.order_date }} - <i class="fas fa-chevron-down"></i>
             </a>
         </div>
-        <div class="col-2">
+        <div class="col-4">
+            <p>{{order.street_address1}}</p>
+        </div>
+
+        <div class="col-4">
             <p>£{{ order.grand_total }}</p>
         </div>
+
     </div>
 
-    {% for item in order.lineitems.all %}
     <div class="row order-table">
-        <div class="collapse col-12 order-item" id="collapse{{order.order_number}}">
-            <div class="row">
-                <div class="col-6 item-image">
-                    <img class="order-image" src="/media/{{ item.product.image }}">
-                    <p>{{item.quantity}} x {{ item.product.name }} £{{ item.product.price }}</p>
-                </div>
+        {% for item in order.lineitems.all %}
 
-            </div>
+        <div class="collapse col-sm-6 col-md-4" id="collapse{{order.order_number}}">
+            <img class="order-image" src="/media/{{ item.product.image }}">
+            <p>{{item.quantity}} x {{ item.product.name }} £{{ item.product.price }}</p>
         </div>
-    </div>
-</div>
-{% endfor %}
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <div class="card-body">
-                <h5 class="card-title">Delivery To</h5>
-                <p class="order-item">{{order.street_address1}}</p>
-                <p class="order-item">{{order.city_town}}</p>
-                <p class="order-item">{{order.county_state}}</p>
-                <p class="order-item">{{order.postcode_zip}}</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-{% endfor %}
-{% else %}
-<p>You've not placed any orders yet!</p>
-{% endif %}
-</div>
-{% endblock %}
+
+
+        {% endfor %}
+
+
+
+        {% endfor %}
+        {% else %}
+        <p>You've not placed any orders yet!</p>
+        {% endif %}
+    </div>
+    {% endblock %}

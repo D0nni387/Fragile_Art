@@ -17,6 +17,7 @@ a:link {
     background-color: #323e48;
 }
 
+
 .page-header {
     margin: 3rem;
 }
@@ -24,6 +25,7 @@ a:link {
 .centered {
     text-align: center;
 }
+
 
 /* Nav Bar */
 
@@ -86,6 +88,7 @@ a:link {
     text-decoration: none;
     color: #D9D9D9
 }
+
 .cart-link {
     text-decoration: none;
     color: #fff;
@@ -128,4 +131,8 @@ a:link {
 .card-size {
     height: 4rem
 }
+
+/* Form Fields */
+
+
 

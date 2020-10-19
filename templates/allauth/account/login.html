@@ -38,12 +38,24 @@
 
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
-        {{ form.as_p }}
+        <p>
+          {{ form.login }}
+        </p>
+        <p>
+          {{form.password}}
+        </p>
+        <p>
+          {{form.remember.label}}
+          {{form.remember}}
+        </p>
+
+
+
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        <button class="primaryAction" type="submit" class="btn btn-warning">{% trans "Sign In" %}</button>
+        <button class="primaryAction btn btn-warning" type="submit">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>
