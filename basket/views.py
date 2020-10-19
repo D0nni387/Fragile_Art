@@ -29,7 +29,7 @@ def add_to_basket(request, item_id):
 def update_basket(request, item_id):
     """ A View to update the basket with """
 
-    item = get_object_or_404(Product, pk=item_id)
+    get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     basket = request.session.get('basket', {})
     if quantity > 0:
@@ -43,7 +43,7 @@ def update_basket(request, item_id):
 def delete_basket_item(request, item_id):
     """ A view to delete selected item from the session basket """
 
-    item = get_object_or_404(Product, pk=item_id)
+    get_object_or_404(Product, pk=item_id)
     basket = request.session.get('basket', {})
     basket.pop(item_id)
     sweetify.info(request, 'Removed', text='Item removed from your basket', icon='info')

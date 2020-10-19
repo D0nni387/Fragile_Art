@@ -1,12 +1,13 @@
 from decimal import Decimal
 from django.conf import settings
-from store.models import Product
 from django.shortcuts import get_object_or_404
+from store.models import Product
+
 
 
 
 def basket_contents(request):
-    """ Retrieves basket contents """
+    """ Provides basket context """
 
     basket_items = []
     total = 0

@@ -2,15 +2,19 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-from .forms import OrderForm
-from store.models import Product
-from .models import Order, OrderLineItem
-from users.forms import UserProfile
-from users.models import UserProfile
-from basket.contexts import basket_contents
-
-import sweetify
 import stripe
+import sweetify
+
+from basket.contexts import basket_contents
+from store.models import Product
+from .forms import OrderForm
+from users.forms import UserProfile
+
+from .models import Order, OrderLineItem
+
+
+
+
 
 @login_required(login_url="/accounts/login")
 def checkout(request):
@@ -46,20 +50,20 @@ def checkout(request):
                     )
                     order_line_item.save()
                 except Product.DoesNotExist:
-                    sweetify.error('Ooops', text='One of the products in your basket wasn\'t found!',
+                    sweetify.error(request, title='Ooops', text='One of the products in your basket wasn\'t found!',
                  icon='error')
                     order.delete()
                     return redirect(reverse('view_basket'))
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            sweetify.error(title='Ooops', text='There has been a problem with your submission',
+            sweetify.error(request, title='Ooops', text='There has been a problem with your submission',
                  icon='error')
             return redirect(reverse('store'))
     else:
         basket = request.session.get('basket', {})
         if not basket:
-            sweetify.error(title='Ooops', text='Errrrr there is nothing in here!',
+            sweetify.error(request, title='Ooops', text='Errrrr there is nothing in here!',
                  icon='error')
             return redirect(reverse('store'))
 
@@ -87,7 +91,7 @@ def checkout_success(request, order_number):
     A view to handle successful checkout
     """
 
-    save_info = request.session.get('save_info')
+    request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     user = UserProfile.objects.get(user=request.user)
     order.user_profile = user
@@ -103,4 +107,3 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-
