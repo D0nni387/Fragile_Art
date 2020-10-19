@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 from .forms import OrderForm
 from store.models import Product
@@ -11,6 +12,7 @@ from basket.contexts import basket_contents
 import sweetify
 import stripe
 
+@login_required(login_url="/accounts/login")
 def checkout(request):
     """A View to return the checkout form"""
 
@@ -51,13 +53,13 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            sweetify.error('Ooops', text='There has been a problem with your submission',
+            sweetify.error(title='Ooops', text='There has been a problem with your submission',
                  icon='error')
             return redirect(reverse('store'))
     else:
         basket = request.session.get('basket', {})
         if not basket:
-            sweetify.error('Ooops', text='Errrrr there is nothing in here!',
+            sweetify.error(title='Ooops', text='Errrrr there is nothing in here!',
                  icon='error')
             return redirect(reverse('store'))
 

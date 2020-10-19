@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404
 
 
 def basket_contents(request):
+    """ Retrieves basket contents """
 
     basket_items = []
     total = 0
