@@ -3,8 +3,8 @@
 __pycache__/
 *.pyc
 *.sqlite3
-clients/fixtures/clients.json
 clients/migrations/0001_initial.py
 clients/migrations/0002_auto_20200630_1741.py
 store/migrations/0002_auto_20200628_2000.py
 env.py
+.DS_Store
