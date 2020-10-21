@@ -100,7 +100,7 @@ With this information i have chosen to use the following colours to provide a gr
 
 #### Desktop
 
-- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-Splash.png)
+- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-splash.png)
 - [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-portfolio.png)
 - [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-store.png)
 - [Product Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-product.png)
