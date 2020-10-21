@@ -156,18 +156,21 @@ The contact page allows the user a variety of methods to contact the artist in r
 | Title            | Key In Database | Form Validation | Data Type |
 |------------------|-----------------|-----------------|-----------|
 | Account id       | _id             | No Validation   | Primary Key  |
-| Username         | username        | string max length 20 | CharField |
-| Password         | password        | hashed min length 8 | CharField |
+| First Name       | first_name      | string max length 20 | CharField |
+| Last Name        | last_name       | hashed min length 8 | CharField |
 | E-mail Address   | email           | Must contain @ & .com etc | Email |
-| House Number     | house           | Max Digits 6 | NumField |
-| Street Address   | street_address1 | string max length 100 | string    |
-| Street Address 2 | street_address2 | string max length 100 | string    |
-| County/State     | county          | string max length 100 | string    |
-| Postal Code      | post_code       | string max length 8 | string    |
-| Contact Number   | tel             | Number max length 15 | string    |
+| Street Address   | default_street_address1 | string max length 128 | string  |
+| Street Address 2 | default_street_address2 | string max length 128 | string  |
+| City Or Town     | default_city_town     | string max length 128 | string  |
+| County/State     | default_county_state      | string max length 64 | string  |
+| Postal Code      | default_postcode_zi      | string max length 12 | string  |
+| Contact Number   | default_telephone_number | Number max length 20 | string  |
 | Country          | country         | pycountry select  | Option    |
 
 #### Products Table
+
+As the brief for the project requires a portfolio and seperate store one table is created to ensure data isn't stored twice and can be
+user by both components
 
 | Title              | Key In Database | Form Validation | Data Type |
 |--------------------|-----------------|-----------------|-----------|
@@ -186,16 +189,32 @@ The contact page allows the user a variety of methods to contact the artist in r
 
 |     Title    | Key In Database |    Form Validation    |  Data Type  |
 |:------------:|:---------------:|:---------------------:|:-----------:|
-| Order Id     | _id             | No Validation         | Primary Key |
-| Username     | username        | text                  | Foreign Key |
-| Address 1    | address_line_1  | string max length 100 | CharField   |
-| Address 2    | address_line_2  | string max length 100 | CharField   |
-| Town/City    | town_or_city    | string max length 100 | CharField   |
-| County/State | county_or_state | string max length 100 | CharField   |
-| Postcode     | postcode        | string max length 8   | CharField   |
+| Order Number | order_number    | No Validation         | Primary Key |
+| User Profile | user_profile    | text                  | Foreign Key |
+| First Name   | first_name      | string max length 100 | CharField   |
+| Last Name    | last name       | string max length 100 | CharField   |
+| email        | email           | string max length 100 | CharField   |
+| telephone Number | telephone_number | string max length 20 | CharField   |
+| street address 1| street_address1 | string max length 100 | CharField   |
+| street address 2 | street_address2 | string max length 100 | CharField   |
+| City Town    | city_town       | string max length 100 | CharField   |
+| County/State | county_state | string max length 100 | CharField   |
+| Postcode Zip | postcode_zip    | string max length 8   | CharField   |
 | Country      | country         | country select        | Option      |
 | Order Date   | order_date      | datetime.date.today   | DateField   |
-| Paid         | paid            | False default Stripe  | Boolean     |
+| Total Order   | total_order      | max digits 10   | Decimal Field   |
+| Delivery Charge | delivery_charge | max digits 5   | decimal Field   |
+| Grand total  | grand_total     | max digits 10 | Decimal Field    |
+
+#### Clients Table
+
+| Title         | Key in Database | Form Validation | Data Type  |
+|---------------|-----------------|-----------------|------------|
+| name          | name            | max length 128  | CharField  |
+| Friendly name | friendly_name   | max length 254  | CharField  |
+| business type | Business Type   | max length 50   | CharField  |
+| Description   | description     | None            | TextField  |
+| image         | image           | None            | ImageField |
 
 ## Technology Used
 
@@ -212,15 +231,15 @@ The contact page allows the user a variety of methods to contact the artist in r
 - [Bootstrap](https://getbootstrap.com/)
 
 ### Libraries
+
 - [Jquery](https://jquery.com/)
 - [Sweet Alert](https://sweetalert2.github.io/)
 - [Stripe Payments](https://stripe.com/)
+- [PopperJS](https://popper.js.org/)]
 
 ## Testing
 
 No automated testing has been used on this project, i have opted to do all testing manually and through numerous user experiences.
-
-### UI
 
 - <strong>Implementation</strong> 🏭:
 When i had set up the products fixtures and loaded into the database i could then view all saleable items in the store, i wanted to ensure all products loaded as expected and that item information was visable when selected.
@@ -316,9 +335,8 @@ Below is an example of how to deploy this site locally based on using *VsCode ID
 ### Deployment Requirements
 
 - [VScode](https://code.visualstudio.com/) IDE Local development tool
-- [python](https://www.python.org/downloads/) Documentation is based on Python v3.7.7
+- [python](https://www.python.org/downloads/) Documentation is based on Python v3.8
 - PIP package installer
-- [AWS-S3](https://aws.amazon.com/s3/) Web based cloud storage
 - [Stripe](https://stripe.com/gb) Payment infrastructure
 
 ### Deploying Locally
@@ -335,7 +353,7 @@ Below is an example of how to deploy this site locally based on using *VsCode ID
 1. Ideally you will want to work within a virtual environment to allow all packages to be kept within the project, this can be installed using the following command (please note some IDE's require pip3 instead of pip, please check with the documentation for your chosen IDE)
 
 ```bash
-pip install virtualenv
+pip install pipenv
 ```
 
 1. To install the virtual environment within the project folder run the following command.
@@ -353,30 +371,20 @@ python -m .venv .env (the .env can be replaced by your folder name of choice)
 1. Next we need to install all modules required by the project to run, use the follow
 
 ```bash
-pip install -r requirements.txt
+pipenv install -r requirements.txt
 ```
 
-1. Create a new folder within the root dir called .vscode and a file inside called settings.json. Within this file add the following lines to set up the environmental variables.
+1. Create a new folder within the root dir called env.py. Within this file add the following lines to set up the environmental variables.
 
 ```bash
-{
-    "git.ignoreLimitWarning": true,
-    "python.pythonPath": ".env\\Scripts\\python.exe",
-    "python.terminal.activateEnvironment": true,
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.pylintArgs": ["--load-plugins=pylint_flask"],
-    "files.autoSave": "onFocusChange",
-    "terminal.integrated.env.windows": {
-      "SECRET_KEY": "[Your key]",
-      "DEV": "1",
-      "HOSTNAME": "0.0.0.0",
-      "PORT": "5000",
-      "STRIPE_PUBLIC_KEY": "[Your Key]",
-      "STRIPE_SECRET_KEY": "[Your Key]",
-      "DEBUG": "True",
-    }
-  }
+import os
+
+os.environ["SECRET_KEY"] = "[Your Secret Key]"
+os.environ["DEV"] = "1"
+os.environ["HOSTNAME"] = "0.0.0.0"
+os.environ["STRIPE_PUBLIC_KEY"] = "[Your Stripe Key]"
+os.environ["STRIPE_SECRET_KEY"] = "[Your Stripe Secret Key]"
+os.environ["DATABASE_URL"] = "[Your DB URL]"
 ```
 
 ### Database setup
