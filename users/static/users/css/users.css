@@ -1,6 +1,10 @@
 .order-image {
     height: 10rem;
     width: 10rem;
+    padding-top: .5rem;
+}
+.order-item {
+    padding: .5rem;
 }
 
 .order-number {
@@ -14,12 +18,7 @@
 
 .order-table {
     border: #313e48 solid 1px;
+    border-radius: .5rem;
 }
 
-.order-item {
-    margin: 0;
-}
 
-.item-image {
-    padding-top: 2rem;
-}
