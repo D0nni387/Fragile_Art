@@ -65,9 +65,9 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 
 #### Admin
 
-- As an Admin i want to be able to add products easily.
-- As an Admin i want to be able to manage orders in a simple and easy manner.
-- As an Admin i want to be able to upload to my portfolio easily.
+- As a user i want to be able to add products easily.
+- As a user i want to be able to manage orders in a simple and easy manner.
+- As a user i want to be able to upload to my portfolio easily.
 
 #### Developer
 
@@ -103,21 +103,21 @@ With this information i have chosen to use the following colours to provide a gr
 - [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-Splash.png)
 - [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-portfolio.png)
 - [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-store.png)
-- [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-product.png)
+- [Product Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-desktop-product.png)
 
 #### Tablet
 
-- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-tablet-splash.png)
-- [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-tablet-portfolio.png)
-- [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-tablet-store.png)
-- [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-tablet-product.png)
+- [Splash Tablet](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-tablet-splash.png)
+- [Portfolio Tablet](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-tablet-portfolio.png)
+- [Store Tablet](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-tablet-store.png)
+- [Product Tablet](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-tablet-product.png)
 
 #### Mobile
 
-- [Splash Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-mobile-splash.png)
-- [Portfolio Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-mobile-portfolio.png)
-- [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-mobile-store.png)
-- [Store Desktop](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-mobile-product.png)
+- [Splash Mobile](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-mobile-splash.png)
+- [Portfolio Mobile](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-mobile-portfolio.png)
+- [Store Mobile](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-mobile-store.png)
+- [Product Mobile](https://raw.githubusercontent.com/D0nni387/Fragile_Art/master/wireframes/fa-mobile-product.png)
 
 ## Features
 
