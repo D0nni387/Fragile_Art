@@ -12,10 +12,6 @@ from users.forms import UserProfile
 
 from .models import Order, OrderLineItem
 
-
-
-
-
 @login_required(login_url="/accounts/login")
 def checkout(request):
     """A View to return the checkout form"""

@@ -1,6 +1,7 @@
 .order-image {
     height: 10rem;
     width: 10rem;
+    padding-top: .5rem;
 }
 
 .order-number {
@@ -17,9 +18,5 @@
 }
 
 .order-item {
-    margin: 0;
-}
-
-.item-image {
-    padding-top: 2rem;
+    padding: .5rem;
 }

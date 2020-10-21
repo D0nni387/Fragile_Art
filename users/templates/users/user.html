@@ -26,41 +26,47 @@
         <div class="col-12">
             <h2 class="title-format">My Previous Orders</h2>
         </div>
-        {% if orders %}
-        {% for order in orders %}
-        <div class="col-4">
+    </div>
+    {% if orders %}
+    {% for order in orders %}
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
             <a class="btn" data-toggle="collapse" href="#collapse{{order.order_number}}" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-                - {{ order.order_date }} - <i class="fas fa-chevron-down"></i>
+                aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-chevron-down"></i>
+                - {{ order.order_date }} -
             </a>
         </div>
-        <div class="col-4">
-            <p>{{order.street_address1}}</p>
+        <div class="col-sm-12 col-md-4">
+            <p>Delivered To: {{order.street_address1}}</p>
         </div>
-
-        <div class="col-4">
-            <p>£{{ order.grand_total }}</p>
+        <div class="col-sm-12 col-md-4">
+            <p>Order Total: £{{ order.grand_total }}</p>
         </div>
+    </div>
+    <div class="row">
+        <div class="collapse col-12 order-table" id="collapse{{order.order_number}}">
+            <div class="row">
+                {% for item in order.lineitems.all %}
 
+                <div class="col-6">
+                    <img class="order-image" src="/media/{{ item.product.image }}">
+                </div>
+                <div class="col-6">
+                    <p class="order-item">{{item.quantity}} x {{ item.product.name }} £{{ item.product.price }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 
-    <div class="row order-table">
-        {% for item in order.lineitems.all %}
-
-        <div class="collapse col-sm-6 col-md-4" id="collapse{{order.order_number}}">
-            <img class="order-image" src="/media/{{ item.product.image }}">
-            <p>{{item.quantity}} x {{ item.product.name }} £{{ item.product.price }}</p>
-        </div>
 
 
 
-        {% endfor %}
+    <!--  -->
 
-
-
-        {% endfor %}
-        {% else %}
-        <p>You've not placed any orders yet!</p>
-        {% endif %}
-    </div>
-    {% endblock %}
+    {% endfor %}
+    {% else %}
+    <p>You've not placed any orders yet!</p>
+    {% endif %}
+</div>
+{% endblock %}
