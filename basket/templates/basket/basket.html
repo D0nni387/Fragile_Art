@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <h1>Shopping Basket</h1>
@@ -19,16 +19,13 @@
     <div class="row">
         <div class="col-12">
             {% if basket_items %}
-            <div class="basket-table">
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Item Name</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Item Cost</th>
-                            <th scope="col">Line Total</th>
-                        </tr>
+                            <th></th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Item Cost</th>
+                            <th>Line Total</th>       
                     </thead>
                     <tbody>
                         {% for item in basket_items %}
@@ -95,7 +92,7 @@
                             </td>
                         </tr>
                 </table>
-            </div>
+
             {% else %}
             <div class="col-12 empty-title">
             <h3>You're basket is empty</h3>
