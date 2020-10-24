@@ -30,7 +30,7 @@
                     <tbody>
                         {% for item in basket_items %}
                         <tr>
-                            <td><img class="basket-image" src="/media/{{ item.product.image }}"
+                            <td><img class="basket-image" src="{{MEDIA_URL}}{{ item.product.image }}"
                                     alt="{{ item.product.name}}"></td>
                             <td>{{ item.product.name }} | {{ item.product.sale_type}}</td>
                             <td>
