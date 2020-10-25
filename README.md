@@ -309,24 +309,43 @@ Each page and link was checked and each provided a positive result, at no point 
 - <strong>Verdict</strong> ✅:
 This test passed and no amendments were required.
 
+---
+
+- <strong>Implementation</strong> 🏭:
+To test the responsiveness of the site, the page was loaded on local mobile devices to check design choices
+
+- <strong>Test</strong> 🧪:
+This test was carried out by loading the site and navigating to each page and adding and completing an order with more than one item
+
+- <strong>Result</strong> 🏆:
+Each page loaded and displayed correctly, an issue was found with the basket which caused the table to overflow the edge of the page.
+
+- <strong>Verdict</strong> ✅:
+This test was classed as a fail and upon rereading the code a redesign of the basket was required to ensure mobile users were presented with the correct information that could be easily read.
 
 ### Bugs
 
 ---
-* Problem: Confirmation e-mail link produces a 404 error.
+* Problem 🐞: Confirmation e-mail link produces a 404 error.
 * Cause: The environmental variable isn't configured correctly.
 * Resolution: adding an initial / to the env path allows the confirmation e-mail to work correctly.
 ---
-* Problem: Custom AllAuth templates not loading
+* Problem 🐞: Custom AllAuth templates not loading
 * Cause: Base template no correctly being referenced.
 * Resolution: removing allauth from the templates file and reinstating fixed this issue.
 ---
-* Problem: Application won't deploy.
+* Problem 🐞: Application won't deploy.
 * Cause: A migration file was deleted accidently and hadn't been commited to GitHub
 * Resolution: The only sure fire way i found to fix this was to 'nuke' the database on the server, delete all local migration files and run all migrations again and reimporting all fixtures.
 ---
+* Problem 🐞: Images when uploaded were not being displayed.
+* Cause: When the S3 bucket was enabled static files were not being served correctly.
+* Resolution: on checking the img tag urls each file was being referenced incorrectly, each was required to reference the store.product.image.url instead of store.product.image
+---
 
 ### Unresolved Issues
+
+The only known but that is still present in the site is that the user can remove the max limit on the quantity by removing the flag in the html using Dev tools, should this site go live and used, a different solution would need to be found on the backend to ensure this can't be submitted.
 
 ## Deployment
 
@@ -342,7 +361,7 @@ Below is an example of how to deploy this site locally based on using *VsCode ID
 ### Deploying Locally
 
 1. Clone a copy of the repository by clicking code at the top of the page and selecting 'Download Zip' when this has downloaded, extract the files to your folder of choice.
-   Alternatively if you have git installed on your client you can run the following command from the terminal 
+   Alternatively if you have git installed on your client you can run the following command from the terminal.
 
    ```bash
    git clone https://github.com/D0nni387/FragileArt.git
