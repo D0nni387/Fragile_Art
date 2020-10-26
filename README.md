@@ -175,15 +175,15 @@ user by both components
 | Title              | Key In Database | Form Validation | Data Type |
 |--------------------|-----------------|-----------------|-----------|
 | Product Id         | _id             | No Validation   | Primary Key  |
-| Product Name       | name            | string max length 254 | CharField |
-| Product Category   | category        | string max length 100 | CharField |
-| Price              | price           | Max Digits 6 Decimal Places 2 | decimal field  |
+| Product Name       | name            | max length 254 | CharField |
+| Product Category   | category        | max length 100 | CharField |
+| Price              | price           | Max Digits 6 Decimal Places 2 | DecimalField  |
 | Client             | client          | No validation | CharField |
 | description        | description     | No validation | CharField |
 | tools              | colour          | No validation | CharField |
 | is sold            | is_sold         | Default True | Boolean Field |
-| sale_type          | sale_type       | string max length 20| Decimal Field |
-| image              | image           | Null True Blank True | Image Field |
+| sale_type          | sale_type       | max length 20| DecimalField |
+| image              | image           | Null True Blank True | ImageField |
 
 #### Orders Table
 
@@ -191,18 +191,18 @@ user by both components
 |:------------:|:---------------:|:---------------------:|:-----------:|
 | Order Number | order_number    | No Validation         | Primary Key |
 | User Profile | user_profile    | text                  | Foreign Key |
-| First Name   | first_name      | string max length 100 | CharField   |
-| Last Name    | last name       | string max length 100 | CharField   |
-| email        | email           | string max length 100 | CharField   |
-| telephone Number | telephone_number | string max length 20 | CharField   |
-| street address 1| street_address1 | string max length 100 | CharField   |
-| street address 2 | street_address2 | string max length 100 | CharField   |
-| City Town    | city_town       | string max length 100 | CharField   |
-| County/State | county_state | string max length 100 | CharField   |
-| Postcode Zip | postcode_zip    | string max length 8   | CharField   |
+| First Name   | first_name      | max length 100 | CharField   |
+| Last Name    | last name       | max length 100 | CharField   |
+| email        | email           | max length 100 | CharField   |
+| telephone Number | telephone_number | max length 20 | CharField   |
+| street address 1| street_address1 | max length 100 | CharField   |
+| street address 2 | street_address2 | max length 100 | CharField   |
+| City Town    | city_town       | max length 100 | CharField   |
+| County/State | county_state    | max length 100 | CharField   |
+| Postcode Zip | postcode_zip    | max length 8   | CharField   |
 | Country      | country         | country select        | Option      |
 | Order Date   | order_date      | datetime.date.today   | DateField   |
-| Total Order   | total_order      | max digits 10   | Decimal Field   |
+| Total Order   | total_order    | max digits 10   | Decimal Field   |
 | Delivery Charge | delivery_charge | max digits 5   | decimal Field   |
 | Grand total  | grand_total     | max digits 10 | Decimal Field    |
 
@@ -235,7 +235,14 @@ user by both components
 - [Jquery](https://jquery.com/)
 - [Sweet Alert](https://sweetalert2.github.io/)
 - [Stripe Payments](https://stripe.com/)
-- [PopperJS](https://popper.js.org/)]
+- [PopperJS](https://popper.js.org/)
+
+### Tools
+
+- [AWS](https://aws.amazon.com/s3/)
+- [Heroku](https://www.heroku.com)
+- [Git](https://git-scm.com/)
+- [Postgres](https://www.postgresql.org/)
 
 ## Testing
 
@@ -326,21 +333,25 @@ This test was classed as a fail and upon rereading the code a redesign of the ba
 ### Bugs
 
 ---
-* Problem 🐞: Confirmation e-mail link produces a 404 error.
-* Cause: The environmental variable isn't configured correctly.
-* Resolution: adding an initial / to the env path allows the confirmation e-mail to work correctly.
+* <strong>Problem</strong> 🐞: Confirmation e-mail link produces a 404 error.
+* <strong>Cause</strong>: The environmental variable isn't configured correctly.
+* <strong>Resolution</strong>: adding an initial / to the env path allows the confirmation e-mail to work correctly.
 ---
-* Problem 🐞: Custom AllAuth templates not loading
-* Cause: Base template no correctly being referenced.
-* Resolution: removing allauth from the templates file and reinstating fixed this issue.
+* <strong>Problem</strong> 🐞: Custom AllAuth templates not loading
+* <strong>Cause</strong>: Base template no correctly being referenced.
+* <strong>Resolution</strong>: removing allauth from the templates file and reinstating fixed this issue.
 ---
-* Problem 🐞: Application won't deploy.
-* Cause: A migration file was deleted accidently and hadn't been commited to GitHub
-* Resolution: The only sure fire way i found to fix this was to 'nuke' the database on the server, delete all local migration files and run all migrations again and reimporting all fixtures.
+* <strong>Problem</strong> 🐞: Application won't deploy.
+* <strong>Cause</strong>: A migration file was deleted accidently and hadn't been commited to GitHub
+* <strong>Resolution</strong>: The only sure fire way i found to fix this was to 'nuke' the database on the server, delete all local migration files and run all migrations again and reimporting all fixtures.
 ---
-* Problem 🐞: Images when uploaded were not being displayed.
-* Cause: When the S3 bucket was enabled static files were not being served correctly.
-* Resolution: on checking the img tag urls each file was being referenced incorrectly, each was required to reference the store.product.image.url instead of store.product.image
+* <strong>Problem</strong> 🐞: Images when uploaded were not being displayed.
+* <strong>Cause</strong>: When the S3 bucket was enabled static files were not being served correctly.
+* <strong>Resolution</strong>: on checking the img tag urls each file was being referenced incorrectly, each was required to reference the store.product.image.url instead of store.product.image
+---
+* <strong>Problem</strong> 🐞: Account system failed to register user.
+* <strong>Cause</strong>: As the sign up was intended to work without having to verify an e-mail address, when sign-up the process failed due to no e-mail setting being available.
+* <strong>Resolution</strong>: Added ACCOUNT_EMAIL_VERIFICATION = 'none' to settings.py to stop an e-mail verification trying to be sent.
 ---
 
 ### Unresolved Issues
@@ -375,16 +386,19 @@ Below is an example of how to deploy this site locally based on using *VsCode ID
 pip install pipenv
 ```
 
-1. To install the virtual environment within the project folder run the following command.
-
-```bash
-python -m .venv .env (the .env can be replaced by your folder name of choice)
+1. In your root dir, create a new folder called .venv (ensure you have the .)
 ```
 
 1. To activate the virtual environment navigate to the below dir and run activate.bat
 
 ```bash
 [folderinstalled]\scripts\activate\activate.bat
+```
+
+If you're using Linux or Mac use the below command 
+
+```bash
+source .venv/bin/activate
 ```
 
 1. Next we need to install all modules required by the project to run, use the follow
@@ -459,6 +473,8 @@ heroku Postgres
 | SECRET_KEY            | [your value] |
 | STRIPE_PUBLIC_KEY     | [your value] |
 | STRIPE_SECRET_KEY     | [your value] |
+| USE_AWS               | TRUE         |
+| DATABASE_URL          | [Your Value] |
 
 1. Now this has been configured you will now migrate the local database to the cloud database using the migrate command as below
 
