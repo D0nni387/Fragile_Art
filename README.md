@@ -71,9 +71,9 @@ He has previously worked with bands such as InMe, Dave McPhearson & Fei Comodo, 
 
 #### Developer
 
-- As a developer i want to ensure the user can't break the flow of the site with correct defensive design choices.
-- As a developer i want to ensure an authenticated user can access all required information correctly.
-- As a developer i want to include options for the admin to quickly edit the site.
+- As a user i want to ensure the user can't break the flow of the site with correct defensive design choices.
+- As a user i want to ensure an authenticated user can access all required information correctly.
+- As a user i want to include options for the admin to quickly edit the site.
 
 
 ### Design Choices
@@ -156,15 +156,15 @@ The contact page allows the user a variety of methods to contact the artist in r
 | Title            | Key In Database | Form Validation | Data Type |
 |------------------|-----------------|-----------------|-----------|
 | Account id       | _id             | No Validation   | Primary Key  |
-| First Name       | first_name      | string max length 20 | CharField |
+| First Name       | first_name      | max length 20 | CharField |
 | Last Name        | last_name       | hashed min length 8 | CharField |
 | E-mail Address   | email           | Must contain @ & .com etc | Email |
-| Street Address   | default_street_address1 | string max length 128 | string  |
-| Street Address 2 | default_street_address2 | string max length 128 | string  |
-| City Or Town     | default_city_town     | string max length 128 | string  |
-| County/State     | default_county_state      | string max length 64 | string  |
-| Postal Code      | default_postcode_zi      | string max length 12 | string  |
-| Contact Number   | default_telephone_number | Number max length 20 | string  |
+| Street Address   | default_street_address1 | max length 128 | CharField  |
+| Street Address 2 | default_street_address2 | max length 128 | CharField  |
+| City Or Town     | default_city_town     | max length 128 | CharField  |
+| County/State     | default_county_state      | max length 64 | CharField  |
+| Postal Code      | default_postcode_zi      | max length 12 | CharField  |
+| Contact Number   | default_telephone_number | Number max length 20 | CharField  |
 | Country          | country         | pycountry select  | Option    |
 
 #### Products Table
@@ -181,7 +181,7 @@ user by both components
 | Client             | client          | No validation | CharField |
 | description        | description     | No validation | CharField |
 | tools              | colour          | No validation | CharField |
-| is sold            | is_sold         | Default True | Boolean Field |
+| is sold            | is_sold         | Default True | BooleanField |
 | sale_type          | sale_type       | max length 20| DecimalField |
 | image              | image           | Null True Blank True | ImageField |
 
@@ -194,17 +194,17 @@ user by both components
 | First Name   | first_name      | max length 100 | CharField   |
 | Last Name    | last name       | max length 100 | CharField   |
 | email        | email           | max length 100 | CharField   |
-| telephone Number | telephone_number | max length 20 | CharField   |
-| street address 1| street_address1 | max length 100 | CharField   |
-| street address 2 | street_address2 | max length 100 | CharField   |
+| telephone Number | telephone_number | max length 20 | CharField |
+| street address 1| street_address1 | max length 100 | CharField |
+| street address 2 | street_address2 | max length 100 | CharField |
 | City Town    | city_town       | max length 100 | CharField   |
 | County/State | county_state    | max length 100 | CharField   |
 | Postcode Zip | postcode_zip    | max length 8   | CharField   |
 | Country      | country         | country select        | Option      |
 | Order Date   | order_date      | datetime.date.today   | DateField   |
-| Total Order   | total_order    | max digits 10   | Decimal Field   |
-| Delivery Charge | delivery_charge | max digits 5   | decimal Field   |
-| Grand total  | grand_total     | max digits 10 | Decimal Field    |
+| Total Order   | total_order    | max digits 10   | DecimalField   |
+| Delivery Charge | delivery_charge | max digits 5   | DecimalField   |
+| Grand total  | grand_total     | max digits 10 | DecimalField    |
 
 #### Clients Table
 
@@ -334,24 +334,24 @@ This test was classed as a fail and upon rereading the code a redesign of the ba
 
 ---
 * <strong>Problem</strong> 🐞: Confirmation e-mail link produces a 404 error.
-* <strong>Cause</strong>: The environmental variable isn't configured correctly.
-* <strong>Resolution</strong>: adding an initial / to the env path allows the confirmation e-mail to work correctly.
+* <strong>Cause</strong>🛠: The environmental variable isn't configured correctly.
+* <strong>Resolution</strong>✅: adding an initial / to the env path allows the confirmation e-mail to work correctly.
 ---
 * <strong>Problem</strong> 🐞: Custom AllAuth templates not loading
-* <strong>Cause</strong>: Base template no correctly being referenced.
-* <strong>Resolution</strong>: removing allauth from the templates file and reinstating fixed this issue.
+* <strong>Cause</strong>🛠: Base template no correctly being referenced.
+* <strong>Resolution</strong>✅: removing allauth from the templates file and reinstating fixed this issue.
 ---
 * <strong>Problem</strong> 🐞: Application won't deploy.
-* <strong>Cause</strong>: A migration file was deleted accidently and hadn't been commited to GitHub
-* <strong>Resolution</strong>: The only sure fire way i found to fix this was to 'nuke' the database on the server, delete all local migration files and run all migrations again and reimporting all fixtures.
+* <strong>Cause</strong>🛠: A migration file was deleted accidently and hadn't been commited to GitHub
+* <strong>Resolution</strong>✅: The only sure fire way i found to fix this was to 'nuke' the database on the server, delete all local migration files and run all migrations again and reimporting all fixtures.
 ---
 * <strong>Problem</strong> 🐞: Images when uploaded were not being displayed.
-* <strong>Cause</strong>: When the S3 bucket was enabled static files were not being served correctly.
-* <strong>Resolution</strong>: on checking the img tag urls each file was being referenced incorrectly, each was required to reference the store.product.image.url instead of store.product.image
+* <strong>Cause</strong>🛠: When the S3 bucket was enabled static files were not being served correctly.
+* <strong>Resolution</strong>✅: on checking the img tag urls each file was being referenced incorrectly, each was required to reference the store.product.image.url instead of store.product.image
 ---
 * <strong>Problem</strong> 🐞: Account system failed to register user.
-* <strong>Cause</strong>: As the sign up was intended to work without having to verify an e-mail address, when sign-up the process failed due to no e-mail setting being available.
-* <strong>Resolution</strong>: Added ACCOUNT_EMAIL_VERIFICATION = 'none' to settings.py to stop an e-mail verification trying to be sent.
+* <strong>Cause</strong>🛠: As the sign up was intended to work without having to verify an e-mail address, when sign-up the process failed due to no e-mail setting being available.
+* <strong>Resolution</strong>✅: Added ACCOUNT_EMAIL_VERIFICATION = 'none' to settings.py to stop an e-mail verification trying to be sent.
 ---
 
 ### Unresolved Issues
@@ -387,7 +387,6 @@ pip install pipenv
 ```
 
 1. In your root dir, create a new folder called .venv (ensure you have the .)
-```
 
 1. To activate the virtual environment navigate to the below dir and run activate.bat
 
