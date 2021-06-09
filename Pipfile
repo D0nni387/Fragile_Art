@@ -32,7 +32,7 @@ stripe = "==2.55.0"
 sweetify = "==2.0.0"
 urllib3 = "==1.25.10"
 whitenoise = "==5.2.0"
-Django = "==3.1.2"
+Django = "==3.1.10"
 Pillow = "==8.0.0"
 PyJWT = {extras = ["crypto"], version = "==1.7.1"}
 boto3 = "*"
